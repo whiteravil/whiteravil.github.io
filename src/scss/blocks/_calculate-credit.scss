@@ -1,0 +1,296 @@
+.calculate-credit {
+    padding: 4rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+}
+
+.calculate-credit__content {
+    background: var(--secondary-color);
+    color: white;
+    border-radius: 1rem;
+    padding: 7rem 0;
+    padding-bottom: 8.4rem;
+
+
+    .low-vision & {
+        background: white;
+        border: 1px solid black;
+        color: black;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 2.5rem 2rem;
+    }
+}
+
+
+
+.calculate-credit__heading {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 120%;
+    margin-bottom: 7rem;
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.calculate-credit__card-row {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+
+
+.calculate-credit__card-left-col,
+.calculate-credit__card-right-col {
+    // width: 50%;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.calculate-credit__card-left-col {
+    padding-right: 6rem;
+    border-right: 0.3rem solid var(--primary-color);
+    width: 70rem;
+    display: flex;
+    flex-direction: column;
+
+
+    .low-vision & {
+        border-color: black;
+    }
+    
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 0;
+        border: none;
+        margin-bottom: 2rem;
+    }
+}
+
+.calculate-credit__card-right-col {
+    padding-left: 6rem;
+    width: 30%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        flex-direction: column;
+        justify-content: initial;
+        padding: 0;
+    }
+}
+
+.calculate-credit__amount-row {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    margin-bottom: 2.4rem;
+    &:first-child {
+        z-index: 10;
+    }
+
+    &:last-of-type {
+        margin-bottom: 1rem;
+    }
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: initial;
+        justify-content: initial;
+        margin: 0;
+        margin-bottom: 1rem;
+        &:last-of-type {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.calculate-credit__amount-text {
+    font-size: 2rem;
+    line-height: 130%;
+    white-space: nowrap;
+    margin-right: 3.5rem;
+    margin-top: 1rem;
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 130%;
+        margin: 0;
+        margin-bottom: 0.6rem;
+    }
+}
+
+.calculate-credit__amount-range {
+    width: 38rem;
+    margin-left: auto;
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.calculate-credit__remark {
+    font-size: 1.5rem;
+    line-height: 130%;
+    color: #c7aecf;
+    margin-top: auto;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 130%;
+        margin-top: 1.2rem;
+    }
+}
+
+.calculate-credit__card-total-card {
+   
+    color: #ffffff;
+    margin-bottom: 2rem;
+
+    .low-vision & {
+        color: black;
+    }
+}
+
+.calculate-credit__card-total-card-key {
+    font-weight: bold;
+    font-size: 4rem;
+    line-height: 120%;
+    line-height: 1;
+    margin-bottom: 1rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 120%;
+        order: 2;
+        margin: 0;
+    }
+}
+
+.calculate-credit__card-total-card-value {
+    font-size: 1.5rem;
+    line-height: 130%;
+    color: #c7aecf;
+
+    .low-vision & {
+        color: black;
+    }
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 130%;
+    }
+}
+
+.calculate-credit__card-btn {
+    background: #94c22b;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    line-height: 120%;
+    color: white;
+    padding: 2.4rem 2.6rem;
+    transition: background-color 0.3s;
+    margin-top: 1.4rem;
+    user-select: none;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &:hover {
+        background-color: var(--primary-color-hover);
+    }
+
+    svg {
+        width: 0.9rem;
+        height: 1.4rem;
+        flex-shrink: 0;
+        margin-left: 2rem;
+        fill: white;
+        @include breakpoint(mobile) {
+            margin-left: 1rem;
+            width: 0.7rem;
+            height: 1.2rem;
+        }
+    }
+
+    .low-vision & {
+        background-color: black !important;
+
+        @include breakpoint(mobile) {
+            font-size: 1.2rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 120%;
+        padding: 1.4rem;
+        border-radius: 0.4rem;
+        margin-right: 2.5rem;
+    }
+}
+
+.calculate-credit__card-total-info {
+    
+ 
+    margin-top: 3rem;
+    @include breakpoint(mobile) {
+        flex-basis: auto;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+.calculate-credit__card-total-info {
+    font-size: 1.5rem;
+    line-height: 130%;
+    color: #c7aecf;
+
+    .low-vision & {
+        color: black;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        margin-top: 2rem;
+    }
+}
+
+
+.calculate-credit__checkboxes {
+    color: white;
+    width: 38rem;
+    margin-left: auto;
+    padding-top: 1.6rem;
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        padding-top: 1rem;
+    }
+}
+
+
+.calculate-credit__checkboxes-row {
+    margin-bottom: 1.6rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 1.2rem;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

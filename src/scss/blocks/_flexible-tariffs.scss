@@ -1,0 +1,358 @@
+.flexible-tariffs {
+    padding-top: 6.7rem;
+    padding-bottom: 3.7rem;
+    @include breakpoint(mobile) {
+        padding: 3.5rem 0;
+        padding-top: 2rem;
+    }
+}
+
+.flexible-tariffs__heading {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 120%;
+    margin-bottom: 2rem;
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.flexible-tariffs__remark {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 130%;
+    color: #959595;
+    margin-bottom: 4rem;
+
+    .low-vision & {
+        color: black;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.flexible-tariffs__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1.5rem;
+
+    @include breakpoint(mobile) {
+        margin: -1rem;
+    }
+}
+
+.flexible-tariffs__list-item {
+    width: 33.33%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        padding: 1rem;
+        width: 100%;
+    }
+}
+
+.flexible-tariffs__card {
+    display: flex;
+    flex-direction: column;
+  
+    position: relative;
+    padding: 2.3rem 3rem;
+    flex-grow: 1;
+    &:link,
+    &:visited {
+        color: black;
+    }
+
+    &--white {
+        color: white;
+        &:link,
+        &:visited {
+            color: white;
+        }
+    }
+
+    .low-vision & {
+        color: black !important;
+        border-radius: 1rem;
+        border: 1px solid black;
+
+        &:link,
+        &:visited {
+            color: black !important;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+    }
+}
+
+.flexible-tariffs__card-title {
+    margin-bottom: 4.6rem;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 120%;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+        font-size: 2rem;
+    }
+}
+
+.flexible-tariffs__card-info {
+    margin-bottom: 7.2rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        display: block;
+
+        thead,
+        tbody,
+        th,
+        td {
+            display: block;
+        }
+
+        tr {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            @include breakpoint(mobile) {
+                margin-bottom: 1.5rem;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        th {
+            font-size: 1.6rem;
+            line-height: 1.2;
+            color: #808080;
+            font-weight: 400;
+            flex-basis: 70%;
+            padding-right: 1rem;
+
+        
+
+            .flexible-tariffs__card--white & {
+                color: white;
+            }
+
+            .low-vision & {
+                color: black !important;
+
+              
+               
+            }
+
+           
+        }
+
+        td {
+            font-size: 1.8rem;
+            line-height: 1.2;
+            text-align: right;
+            color: #000000;
+
+            white-space: nowrap;
+            flex-shrink: 0;
+
+            .low-vision & {
+                color: black !important;
+                b {
+                    font-weight: 500;
+                }
+
+                @include breakpoint(mobile) {
+                    font-size: 1.6rem;
+                }
+            }
+
+            @include breakpoint(mobile) {
+                font-size: 1.4rem;
+            }
+
+            .flexible-tariffs__card--white & {
+                color: white;
+            }
+        }
+    }
+}
+
+.flexible-tariffs__card-link {
+    margin-left: auto;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 1.8rem 4.5rem;
+    background: var(--primary-color);
+    border-radius: 1rem;
+    color: white;
+    transition: background-color 0.2s;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--primary-color-hover);
+    }
+
+
+    .low-vision & {
+        background-color: black !important;
+        color: white !important;
+
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+            padding-right: 2rem;
+            padding-left: 2rem;
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        font-weight: 500;
+        font-size: 1rem;
+        right: 0;
+        line-height: 120%;
+       
+        border-radius: 0.4rem;
+        padding: 1.4rem 2.5rem;
+
+      
+    }
+}
+
+.flexible-tariffs__card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 1rem;
+
+
+    .low-vision & {
+        display: none;
+    }
+   
+    @include objectFitCover();
+}
+
+.flexible-tariffs__content {
+    margin-bottom: 3.6rem;
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.flexible-tariffs__message {
+    font-size: 1.8rem;
+    line-height: 130%;
+    color: #959595;
+
+    em,
+    a {
+        font-style: normal;
+        color: var(--primary-color);
+
+        &:link,
+        &:visited {
+            color: var(--primary-color);
+        }
+    }
+
+    .low-vision & {
+        color: black !important;
+
+        em {
+            color: black !important;
+            font-weight: 500;
+        }
+
+        a {
+            color: black !important;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+    }
+}
+
+.flexible-tariffs__card-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.flexible-tariffs__card-learn-more {
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 120%;
+    text-transform: uppercase;
+    transition: color .2s;
+    color: #ffffff; 
+    margin-right: 2rem;
+
+
+    &:link,
+    &:visited {
+        color: var(--primary-color);
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--secondary-color);
+    }
+
+    .flexible-tariffs__card--white & {
+        &:link,
+        &:visited {
+            color: white;
+        }
+        &:hover {
+            color: black;
+        }
+
+    }
+
+   
+    .low-vision & {
+        color: black !important;
+        font-size: 1.5rem;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+
+    }
+    
+}

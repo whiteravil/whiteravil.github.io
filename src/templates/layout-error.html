@@ -1,0 +1,56 @@
+{% if not(title) %} {% set title = "Modern Boilerplate" %} {% endif %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script>
+            window.MSInputMethodContext && document.documentMode && document.write('<script src="assets/js/ie11CustomProperties.js"><\x2fscript>');
+        </script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styles.min.css" />
+        <title>
+            {{ title }}
+        </title>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=1c9ab29b-1afd-4a21-b1ea-478c36667e22
+        &lang=ru_RU" type="text/javascript">
+        </script>
+    </head>
+    <body class="no-touch {% if navigationText == "dark" %} dark-nav-text {% endif %} {% if mainNav == "dark" %} dark-main-nav {% endif %}" ontouchstart="" data-barba-prevent="all">
+        <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            {% include "sprite.njk" %}
+        </div>
+
+        <div class="page-content">
+            {% block content %}{% endblock %}
+            {% include "partials/modals.html" %}
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                function initBackendScripts() {
+                    console.log('Здесь прописываем инициализацию скриптов для бэкенда')
+                }
+                function destroyBackendScripts() {
+                    console.log('Здесь прописываем подчистку скриптов для бэкенда')
+                }
+            </script>
+            <script>
+                // Пример получения информации с ползунков
+
+                // (function() {
+                //     var ranges = Array.prototype.slice.call(document.querySelectorAll('input[type="range"]'));
+
+                //     ranges.forEach(range => {
+                //         range.addEventListener('rangeupdate', function(e) {
+                //             console.log('new range value', e)
+                //         })
+                //     })
+                // }());
+            </script>
+            <script src="assets/js/maps.js"></script>
+            <script src="js/app.js"></script>
+        </div>
+    </body>
+</html>

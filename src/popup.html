@@ -1,0 +1,20 @@
+{% set title = "Банк Казани - Попап" %}
+{% set activePage = "Home"  %}
+{% set navigationText = "dark"  %}
+{% extends "layout.html" %}
+{% block content %}
+    {% include "partials/bank-menu-product.html" %}
+    {% include "blocks/navigation-short.html" %}
+    <div data-barba="wrapper">
+        <div data-barba="container" data-barba-namespace="home">
+            <div class="container">
+                <a href="#testmodal" class="js-open-modal open-modal-test-btn">
+                    Открыть попап
+                </a>
+            </div>
+        
+          
+           
+        </div>
+    </div>
+{% endblock %}

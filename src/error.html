@@ -1,0 +1,47 @@
+{% set title = "Банк Казани - 404 Ошибка" %} {% extends "layout-error.html" %} {% block content %}
+
+<div data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="home">
+        <section class="error">
+            <div class="container">
+                <div class="error__card">
+                    <a href="#" class="error__card-logo">
+                        <img src="img/logo.png" alt="" class="error__card-logo-image" />
+                    </a>
+                    <h1 class="error__card-code">
+                        404
+                    </h1>
+                    <div class="error__card-details">
+                        <p>
+                            Такой страницы нет
+                        </p>
+                    </div>
+                    <h3 class="error__card-other-pages-heading">
+                        Но есть много других страниц:
+                    </h3>
+                    <nav class="error__card-nav">
+                        <a href="#" class="error__card-nav-link">
+                            Главная
+                        </a>
+                        <a href="#" class="error__card-nav-link">
+                            Кредиты
+                        </a>
+                        <a href="#" class="error__card-nav-link">
+                            Вклады
+                        </a>
+                        <a href="#" class="error__card-nav-link">
+                            Банк Казани
+                        </a>
+                        <a href="#" class="error__card-nav-link">
+                            Кредиты
+                        </a>
+                        <a href="#" class="error__card-nav-link">
+                            Вклады
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+{% endblock %}

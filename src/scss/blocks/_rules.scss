@@ -1,0 +1,23 @@
+.rules {
+    padding: 4rem 0;
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+    }
+}
+
+.rules__nav {
+    margin-bottom: 6rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.rules__text {
+    font-size: 2rem;
+    line-height: 130%;
+    color: #000000;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+    }
+}

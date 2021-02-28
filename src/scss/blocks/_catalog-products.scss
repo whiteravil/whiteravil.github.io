@@ -1,0 +1,114 @@
+
+
+.catalog-products {
+    margin-top: 6rem;
+    margin-bottom: 10rem;
+
+    @include breakpoint(mobile) {
+        margin: 3rem 0;
+        margin-bottom: 4rem;
+    }
+}
+
+
+.catalog-products__list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4rem;
+
+    @include breakpoint(mobile) {
+        margin: -1.5rem;
+    }
+}
+
+
+.catalog-products__list-item {
+    width: 50%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+        padding: 1.5rem;
+        width: 100%;
+    }
+}
+
+.catalog-products__card {
+    display: flex;
+    flex-direction: column;
+    padding: 4.5rem;
+    background-color: #f5f5f5;
+    border-radius: 1rem;
+    justify-content: space-between;
+    min-height: 22.8rem;
+    color: #2e3127;
+    flex-grow: 1;
+    transition: color .2s;
+    &:link,
+    &:visited {
+        color: #2e3127;
+    }
+
+    &:hover {
+        color: var(--primary-color);
+    }
+
+
+    .low-vision & {
+        background-color: #fff !important;
+        border: 1px solid black;
+        color: black !important;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        min-height: 16rem;
+        border-radius: .8rem;
+    }
+}
+
+.catalog-products__tags {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.6rem;
+
+    
+}
+
+.catalog-products__tag {
+    flex-shrink: 0;
+    padding: 0.7rem 1rem;
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+    border: 1px solid #cee1a4;
+    margin-right: 1.5rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    border-radius: .4rem;
+    &:last-child {
+        margin-right: 0;
+    }
+
+
+    .low-vision & {
+        border-color: black !important;
+        color: black !important;
+    }
+
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        padding: .5rem 1rem;
+        border-radius: .4rem;
+    }
+}
+
+.catalog-products__card-title {
+    font-weight: 500;
+    font-size: 2.6rem;
+    line-height: 120%;
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+    }
+}   

@@ -1,0 +1,201 @@
+.cookies {
+    position: fixed;
+    right: 5.8rem;
+    bottom: 3rem;
+    max-width: 80rem;
+    width: 100%;
+    z-index: 500;
+    background: #ffffff;
+    box-shadow: 0px 0.8rem 5rem -0.9rem rgba(0, 0, 0, 0.12);
+    border-radius: 1rem;
+    padding: 4rem 3.5rem;
+
+    .cookies-panel-hidden & {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0s linear 0.3s;
+    }
+
+    .low-vision & {
+        border: 1px solid black;
+        box-shadow: none;
+        color: black;
+        
+    }
+
+    @include breakpoint(mobile) {
+        right: 1rem;
+        left: 1rem;
+        bottom: 1rem;
+        width: auto;
+        padding: 2.4rem;
+    }
+}
+
+.cookies__close-btn {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-left: 0.8rem;
+
+   
+
+
+    @include breakpoint(mobile) {
+        right: 1.6rem;
+        left: auto;
+        top: 1.6rem;
+        margin: 0;
+    }
+
+    svg {
+        fill: var(--primary-color);
+        transition: fill 0.2s;
+        width: 1.4rem;
+        height: 1.4rem;
+
+        .low-vision & {
+            
+            fill: black !important;
+        }
+    }
+
+    &:hover {
+        svg {
+            fill: var(--primary-color-hover);
+        }
+    }
+
+   
+}
+
+.cookies__row {
+    display: flex;
+    align-items: center;
+
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: initial;
+    }
+}
+
+.cookies__warning {
+    margin-right: 1rem;
+    svg {
+        width: 4.8rem;
+        height: 4.8rem;
+        flex-shrink: 0;
+        display: block;
+        fill: var(--primary-color);
+
+
+      
+    }
+
+    .low-vision & {
+        svg {
+            fill: black;
+        }
+       
+    }
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+.cookies__message {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    color: #585858;
+    
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+
+    .low-vision & {
+        color: black;
+
+        @include breakpoint(mobile) {
+            font-size: 1.6rem;
+        }
+    }
+    a {
+        font-weight: 500;
+        &:link,
+        &:visited {
+            color: var(--primary-color);
+        }
+
+        .low-vision & {
+            color: black;
+            &:link,
+            &:visited {
+                color: black;
+            }
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.cookies__buttons {
+    display: flex;
+    align-items: center;
+}
+
+.cookies__accept {
+    padding: 1.7rem 2.5rem;
+    font-weight: 500;
+
+    font-size: 1.6rem;
+    line-height: 120%;
+
+    text-transform: uppercase;
+    transition: color 0.2s, background-color 0.2s;
+    border: 1px solid var(--primary-color);
+    border-radius: 1rem;
+    width: 100%;
+    text-align: center;
+    color: var(--primary-color);
+    &:link,
+    &:visited {
+        color: var(--primary-color);
+    }
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: white;
+    }
+
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        padding: 1.4rem 2.4rem;
+        border-radius: .8rem;
+        font-size: 1.4rem;
+    }
+
+    .low-vision & {
+        color: white !important;
+        background: black !important;
+        border: 1px solid black;
+        font-size: 1.8rem;
+
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+        }
+        &:link,
+        &:visited {
+            color: black;
+        }
+    }
+}
+

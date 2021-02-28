@@ -1,0 +1,35 @@
+{% set title = "Банк Казани - Таблица" %} {% set activePage = "Home" %} {% set navigationText = "dark" %} {% extends "layout.html" %} {% block content %} {% include "partials/bank-menu-product.html" %} {% include
+"blocks/navigation-short-fullscreen.html" %}
+<div data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="home">
+        <div class="catalog">
+            <div class="container">
+                <div class="catalog__layout-row">
+                    <div class="catalog__left-col">
+                        <div class="catalog__menu">
+                            <a href="#" class="catalog__menu-link">
+                                Расчетно-кассовое обслуживание
+                            </a>
+                            <a href="#" class="catalog__menu-link active">
+                                Кредиты бизнеcу
+                            </a>
+                            <a href="#" class="catalog__menu-link">
+                                Депозиты бизнесу
+                            </a>
+                            <a href="#" class="catalog__menu-link">
+                                Банковские гарантии
+                            </a>
+                            <a href="#" class="catalog__menu-link">
+                                Пластиковые карты
+                            </a>
+                        </div>
+                    </div>
+                    <div class="catalog__right-col">
+                        {% include "blocks/two-column-table.html" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

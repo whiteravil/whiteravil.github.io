@@ -1,0 +1,252 @@
+{% if not(title) %} {% set title = "Modern Boilerplate" %} {% endif %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+        
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="assets/js/ie11CustomProperties.js"></script>
+        <script src="assets/js/svgInject.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="css/styles.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+        <link rel="stylesheet" href="assets/plugins/bvi/css/bvi.min.css">
+        <title>
+            {{ title }}
+        </title>
+        <script src="https://api-maps.yandex.ru/2.1/?apikey=d41198b4-79cf-4ff2-83a6-aaff2a77a15c&lang=ru_RU" type="text/javascript"> 
+        </script>
+    </head>
+    <body class="no-touch {% if navigationText == "dark" %} dark-nav-text {% endif %} {% if mainNav == "dark" %} dark-main-nav {% endif %}" ontouchstart="" data-barba-prevent="all">
+        <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            {% include "sprite.njk" %}
+        </div>
+
+        <div class="page-content">
+            {% include "partials/header.html" %}
+
+            <main class="page-main">
+                {% block content %}{% endblock %}
+            </main>
+
+            {% include "partials/footer.html" %}
+            {% include "partials/modals.html" %}
+            {% include "partials/cookies.html" %}
+            {% include "partials/success.html" %}
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script>
+                function initBackendScripts() {
+                    // console.log('Здесь прописываем инициализацию скриптов для бэкенда');
+
+                    var applicationForm = document.querySelector('#application-form');
+
+                    if (applicationForm) {
+                        applicationForm.addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            if ($(applicationForm).parsley().isValid()) {
+                                document.documentElement.style.setProperty('--progress', "40%");
+                                setTimeout(function() {
+                                    document.documentElement.style.setProperty('--progress', "100%");
+                                    setTimeout(function() {
+                                
+                                        document.body.classList.add('global-success-shown')
+                                    }, 200)
+                                }, 500)
+                            }
+                        })
+                    }
+
+
+
+                    var reviewForm = document.querySelector('#review-form');
+
+                    if (reviewForm) {
+                        reviewForm.addEventListener('submit', function(event) {
+                            event.preventDefault();
+
+                            document.body.classList.add('global-success-shown')
+                            var modal = reviewForm.closest('.js-modal');
+                            setTimeout(function() {
+                                if (window.closeModal) {
+                                    window.closeModal(modal);
+                                    document.body.classList.remove('global-success-shown')
+                                }
+                            }, 2000)
+                        })
+                    }
+
+                    var applicationRemake = document.querySelector('.js-application-remake');
+
+                    if (applicationRemake) {
+                        var nextBtn = applicationRemake.querySelector('.js-form-next');
+                        var prevBtn = applicationRemake.querySelector('.js-form-prev');
+                        var step = 0;
+                        var registerGos = document.querySelector('.modal__application-register-gos')
+                        var goBack = document.querySelector('.js-go-back-from-code')
+                        var codeForm = document.querySelector('.js-application-code-form')
+
+                        nextBtn.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            var validationResult = $(applicationRemake)
+                                .parsley()
+                                .validate({ group: 'firststep' });
+                            if (validationResult) {
+                                window.openModal('#application-register');
+                            }
+                        })
+
+                        prevBtn.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            window.applicationRemakeAPI.setStep(0);
+                        })
+
+                        registerGos.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            window.applicationRemakeAPI.setStep(1);
+                            var modal = document.querySelector('#application-register')
+
+                            window.closeModal(modal);
+
+                        })
+
+                        applicationRemake.addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            if ($(applicationRemake).parsley().isValid()) {
+                                window.openModal('#application-code');
+                            }
+                        })
+
+                        goBack.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            var modal = document.querySelector('#application-code')
+                            window.closeModal(modal);
+                        })
+
+                        codeForm.addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            var modal = document.querySelector('#application-code')
+                            window.closeModal(modal);
+                            window.openModal('#application-success');
+                        })
+                    }
+
+
+
+                    var newApplicationForm = document.querySelector('.js-new-application-form');
+
+
+
+                   
+
+                    if (newApplicationForm) {
+                        newApplicationForm.sendCode = function() {
+                        return new Promise(function(resolve, reject) {
+                            setTimeout(function() {
+                                if ($('.js-new-application-form input.js-phone-input').parsley().isValid()) {
+                                    console.log('Phone field is valid, sending code');
+                                    resolve();
+                                } else {
+                                    $('.js-new-application-form input.js-phone-input').parsley().validate();
+                                    console.log('Phone field is not valid, not sending code');
+                                    reject();
+                                }
+                            }, 500)
+                        })
+                        }
+
+                        newApplicationForm.validateCode = function(code) {
+                            return new Promise(function(resolve, reject) {
+                                setTimeout(function() {
+                                    if (code === '937362') {
+                                        resolve(true);
+                                    } else {
+                                        reject(false);
+                                    }
+                                }, 500)
+                            })
+                        }
+                        var success = document.querySelector('.form-success');
+                        newApplicationForm.addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            if ($(newApplicationForm).parsley().isValid()) {
+                                document.body.classList.add('global-success-shown')
+                                setTimeout(function() {
+                                    document.body.classList.remove('global-success-shown')
+                                    newApplicationForm.reset();
+                                    $(newApplicationForm).parsley().reset();
+                                    document.documentElement.style.setProperty('--progress', '0%');
+                                    if (newApplicationForm.setStep) {
+                                        newApplicationForm.setStep(0);
+                                    }
+                                }, 7000);
+                            }
+                        })
+                    }
+
+
+                    const cookiesBtns = [document.querySelector('.cookies__accept'), document.querySelector('.cookies__decline'), document.querySelector('.cookies__close-btn')];
+
+                    cookiesBtns.forEach(function(btn) {
+                        if (btn) {
+                            btn.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            document.body.classList.add('cookies-panel-hidden');
+                            sessionStorage.setItem('cookiesAccepted', 1);
+                        })
+                        }
+                       
+                    })
+
+                    if (sessionStorage.getItem('cookiesAccepted') == 1) {
+                        document.body.classList.add('cookies-panel-hidden');
+                    }
+
+
+
+                    var newsSubscription = document.querySelector('#news-subscription');
+
+                    if (newsSubscription) {
+                        newsSubscription.addEventListener('submit', function(event) {
+                            event.preventDefault();
+                            document.body.classList.add('global-success-shown')
+                        })
+                    }
+
+                    var successClose = document.querySelector('.success__card-close');
+
+                    if (successClose) {
+                        successClose.addEventListener('click', function(event) {
+                            event.preventDefault();
+                            document.body.classList.remove('global-success-shown')
+                        })
+                    }
+                }
+                function destroyBackendScripts() {
+                    // console.log('Здесь прописываем подчистку скриптов для бэкенда')
+                }
+            </script>
+            <script>
+                // Пример получения информации с ползунков
+
+                // (function() {
+                //     var ranges = Array.prototype.slice.call(document.querySelectorAll('input[type="range"]'));
+
+                //     ranges.forEach(range => {
+                //         range.addEventListener('rangeupdate', function(e) {
+                //             console.log('new range value', e)
+                //         })
+                //     })
+                // }());
+            </script>
+            <script src="assets/js/maps.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+            <script src="assets/plugins/bvi/js/js.cookie.min.js"></script>
+            <script src="assets/plugins/bvi/js/bvi-init.min.js"></script>
+            <script src="assets/plugins/bvi/js/bvi.min.js"></script>
+            <script src="js/app.js"></script>
+        </div>
+    </body>
+</html>

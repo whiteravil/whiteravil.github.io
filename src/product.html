@@ -1,0 +1,16 @@
+{% set title = "Банк Казани - Кредит доверительный" %}
+{% set activePage = "Home"  %}
+{% extends "layout.html" %}
+{% block content %}
+    {% include "partials/bank-menu-product.html" %}
+    {% include "blocks/navigation-block-product.html" %}
+    <div data-barba="wrapper">
+        <div data-barba="container" data-barba-namespace="home">
+            {% include "blocks/general-rules.html" %}
+            {% include "blocks/rules.html" %}
+            {% include "blocks/documents.html" %}
+            {% include "blocks/calculate-credit.html" %}
+            {% include "blocks/other-credit-products.html" %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,123 @@
+.tabs-nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: -1.6rem;
+
+    &--compact {
+        margin-left: -1rem;
+    }
+    @include breakpoint(mobile) {
+        overflow-y: hidden;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        margin: -2.4rem calc(-1 * var(--content-padding));
+        margin-left: calc(-1 * (var(--content-padding) + 1rem));
+        margin-right: calc(-1 * (var(--content-padding) + 1rem));
+        padding: 2.4rem var(--content-padding);
+        @include noScrollbar();
+        &::after {
+            content: '';
+            flex-shrink: 0;
+            height: 1px;
+            width: var(--content-padding);
+            
+        }
+    }
+}
+
+.tabs-nav__link {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    padding: 0.8rem 1.6rem;
+    border-radius: 1rem;
+    transition: background-color 0.2s, color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-right: 2rem;
+    margin-bottom: .8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+
+   
+    .icon-link {
+        width: 2rem;
+        height: 2rem;
+        flex-shrink: 0;
+        margin-left: 1.4rem;
+        fill: currentColor;
+
+        @include breakpoint(mobile) {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-left: 1rem;
+        }
+    }
+    .tabs-nav--compact & {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-right: 0.5rem;
+        @include breakpoint(mobile) {
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 120%;
+            padding: .6rem 1rem;
+            border-radius: .4rem;
+            margin-right: .5rem;
+          
+        }
+    }
+    &:link,
+    &:visited {
+        color: inherit;
+    }
+
+    &.active,
+    &:hover {
+        background: #ecf3dc;
+        color: var(--primary-color);
+
+
+        .low-vision & {
+            background: black !important; 
+            color: white !important;
+        }
+    }
+
+
+    .tabs-nav--light & {
+        color: white;
+
+        &.active,
+        &:hover {
+            background: #ECF3DC;
+            color: var(--primary-color);
+
+
+            
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 120%;
+        padding: .6rem 1rem;
+        border-radius: .4rem;
+        margin: 0;
+        margin-right: .5rem;
+
+
+        .low-vision & {
+            font-size: 1.6rem;
+            padding: .8rem .6rem;
+            margin-right: 0.8rem;
+        }
+
+      
+       
+    }
+}

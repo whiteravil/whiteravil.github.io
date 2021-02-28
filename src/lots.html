@@ -1,0 +1,14 @@
+{% set title = "Банк Казани - Реализуемое имущество" %}
+{% set activePage = "Home"  %}
+{% set navigationText = "dark"  %}
+{% extends "layout.html" %}
+{% block content %}
+    {% include "partials/bank-menu-product.html" %}
+    {% include "blocks/navigation-short-fullscreen.html" %}
+    <div data-barba="wrapper">
+        <div data-barba="container" data-barba-namespace="home">
+            {% include "blocks/lots.html" %}
+        
+        </div>
+    </div>
+{% endblock %}

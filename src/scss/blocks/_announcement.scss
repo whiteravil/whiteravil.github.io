@@ -1,0 +1,107 @@
+.announcement {
+    padding: 8rem 0;
+    padding-bottom: 2rem;
+
+    @include breakpoint(mobile) {
+        padding-top: 4rem;
+    }
+}
+
+.announcement__card {
+    position: relative;
+    border-radius: 1rem;
+    padding: 8rem;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--primary-color);
+    overflow: hidden;
+    z-index: 1;
+    &:link,
+    &:visited {
+        color: black;
+    }
+
+
+    .low-vision & {
+        border: 1px solid black;
+        background-color: white;
+        color: black;
+    }
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        border-radius: .8rem;
+    }
+}
+
+.announcement__card-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+    z-index: -1;
+
+    .low-vision & {
+        display: none;
+    }
+}
+
+.announcement__card-heading {
+    font-weight: 500;
+    font-size: 3.4rem;
+    line-height: 120%;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 1.2;
+    }
+}
+
+.announcement__card-description {
+    font-size: 2rem;
+    line-height: 130%;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+    }
+}
+
+
+.announcement__btn {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: white;
+    padding: 2.2rem 3.4rem;
+    border-radius: 1rem;
+    background-color: var(--primary-color);
+    white-space: nowrap;
+    transition: background-color 0.2s;
+    text-align: center;
+    align-self: flex-start;
+    &:hover {
+        background-color: var(--primary-color-hover);
+    }
+
+    .low-vision & {
+        background-color: black !important;
+        color: white;
+
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.2;
+        padding: 1.5rem 3rem;
+        border-radius: 0.4rem;
+    }
+}

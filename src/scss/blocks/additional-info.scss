@@ -1,0 +1,260 @@
+.additional-info {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    padding-bottom: 10rem;
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+    }
+}
+
+.additional-info__heading {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 120%;
+    margin-bottom: 4.2rem;
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.additional-info__accordion {
+    background: #f7f7f7;
+    border-radius: 1rem;
+    margin-bottom: 0.8rem;
+    padding: 1rem;
+
+
+    .low-vision & {
+        background: white;
+        border: 1px solid black;
+        color: black;
+    }
+    @include breakpoint(mobile) {
+        padding: 1rem;
+    }
+
+}
+
+.additional-info__inner-accordion {
+    margin-top: 2rem;
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include breakpoint(mobile) {
+        padding-left: 4rem;
+    }
+}
+
+.additional-info__accordion-btn,
+.additional-info__inner-accordion-btn {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    line-height: 146%;
+
+    &:link,
+    &:visited {
+        color: var(--secondary-color);
+    }
+
+    .low-vision & {
+        color: black !important;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+    }
+}
+
+.additional-info__accordion-btn-arrow,
+.additional-info__inner-accordion-btn-arrow {
+    width: 3.7rem;
+    height: 3.7rem;
+    flex-shrink: 0;
+    margin-right: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform .2s;
+    svg {
+        fill: var(--secondary-color);
+        width: 1.4rem;
+        height: 0.9rem;
+        flex-shrink: 0;
+        margin-top: 0.1em;
+
+        .low-vision & {
+            fill: black !important;
+        }
+    }
+
+  
+
+    @include breakpoint(mobile) {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1.5rem;
+        svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin: 0;
+        }
+    }
+}
+
+
+.additional-info__accordion-btn-arrow {
+    .additional-info__accordion.active & {
+        transform: rotate(540deg);
+    }
+}
+
+.additional-info__inner-accordion-btn-arrow {
+    .additional-info__inner-accordion.active & {
+        transform: rotate(540deg);
+    }
+}
+
+
+
+.additional-info__accordion-content,
+.additional-info__inner-accordion-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .3s;
+    margin-top: .25rem;
+}
+
+.additional-info__accordion-content-inner,
+.additional-info__inner-accordion-content-inner {
+    padding: 3.6rem;
+    padding-left: 5.5rem;
+    padding-right: 5.5rem;
+
+    @include breakpoint(mobile) {
+        padding: 2rem 0;
+    }
+}
+
+.additional-info__docs-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1.5rem;
+    @include breakpoint(mobile) {
+        margin: -1rem;
+    }
+}
+
+.additional-info__docs-list-item {
+    padding: 1.5rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        padding: 1rem;
+        width: 100%;
+    }
+}
+
+.additional-info__docs-card {
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.8rem;
+    line-height: 130%;
+    transition: color .2s;
+    &:link,
+    &:visited {
+        color: var(--secondary-color);
+    }
+
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+
+
+    .low-vision & {
+        color: black !important;
+    }
+
+    @include breakpoint(mobile) {
+        align-items: flex-start;
+        font-size: 1.4rem;
+    }
+}
+
+.additional-info__docs-card-icon-container {
+    width: 5.2rem;
+    height: 5.2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    margin-right: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    svg {
+        fill: var(--primary-color);
+        width: 2.2rem;
+        height: 2.8rem;
+        flex-shrink: 0;
+
+        .low-vision & {
+            fill: black;
+            width: 3.4rem;
+            height: 3.4rem;
+
+            @include breakpoint(mobile) {
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+        }
+    }
+
+    @include breakpoint(mobile) {
+        width: 3.2rem;
+        height: 3.2rem;
+        margin-right: 1rem;
+        border-radius: .8rem;
+        svg {
+            width: 1.6rem;
+            height: 1.6rem;
+        }
+    }
+}
+
+.additional-info__docs-card-content {
+    width: 50%;
+    flex-grow: 1;
+}
+
+
+
+.additional-info__docs-card-meta-size {
+    font-size: 1.4rem;
+    line-height: 146%;
+    color: #949494;
+
+
+    .low-vision & {
+        color: black;
+        font-size: 1.6rem;
+        font-weight: 500;
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+        }
+    }
+    // margin-left: 1.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+    }
+}

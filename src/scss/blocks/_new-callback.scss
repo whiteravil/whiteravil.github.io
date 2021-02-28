@@ -1,0 +1,11 @@
+.new-callback__heading {
+    font-weight: 500;
+    font-size: 5.4rem;
+    line-height: 120%;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+}

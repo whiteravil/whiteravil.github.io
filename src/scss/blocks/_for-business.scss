@@ -1,0 +1,441 @@
+.for-business {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+
+    @include breakpoint(mobile) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.for-business__row {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.for-business__left-column {
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.for-business__right-column {
+    width: 37.2rem;
+    flex-shrink: 0;
+    margin-left: 12rem;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        margin: 0;
+        width: 100%;
+        flex-shrink: 1;
+    }
+}
+
+.for-business__form {
+    padding: 3.2rem 3.4rem;
+    flex-grow: 1;
+
+    border: 1px solid #e0e0e0;
+    border-left: none;
+    position: relative;
+
+    .low-vision & {
+        border-color: black;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0.4rem;
+        background-color: var(--primary-color);
+
+        .low-vision & {
+            background: black;
+        }
+    }
+
+    .parsley-errors-list.filled {
+        margin: 1rem 0;
+        font-size: 1.4rem;
+        color: #b90e0e;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include breakpoint(mobile) {
+            font-size: 1.2rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 1.8rem 2.2rem;
+        margin-top: 4rem;
+    }
+}
+
+.for-business__form-input + .parsley-errors-list.filled {
+    margin-top: -1rem;
+
+    @include breakpoint(mobile) {
+        margin-top: -0.5rem;
+    }
+}
+
+.for-business__form-title {
+    font-weight: 500;
+    font-size: 2.6rem;
+    line-height: 120%;
+    margin-bottom: 1.4rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.for-business__form-text {
+    font-size: 1.8rem;
+    line-height: 146%;
+    margin-bottom: 2rem;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.for-business__form-input {
+    background: #f5f5f5;
+    border-radius: 0.4rem;
+    width: 100%;
+    font: inherit;
+    padding: 2.2rem;
+    font-size: 2rem;
+    line-height: 120%;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+
+
+  
+    @include placeholder {
+        color: #a0a0a0;
+    }
+
+    .low-vision & {
+        background: transparent;
+        border: 1px solid black;
+        @include placeholder {
+            color: black;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        padding: 1.5rem 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.for-business__form-submit {
+    background: #94c22b;
+    border-radius: 1rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 120%;
+    text-transform: uppercase;
+    padding: 2.4rem;
+    width: 100%;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 2.4rem;
+    transition: background-color 0.2s;
+    &:hover {
+        background-color: var(--secondary-color);
+    }
+
+    .low-vision & {
+        background: transparent;
+        color: black;
+        border: 1px solid black;
+        &:hover {
+            color: black;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        padding: 1.6rem;
+        margin-bottom: 2rem;
+        border-radius: 0.4rem;
+    }
+}
+
+.for-business__form-remark {
+    font-size: 1.5rem;
+    line-height: 130%;
+    color: #c6c6c6;
+    @include breakpoint(mobile) {
+        font-size: 1.3rem;
+    }
+}
+
+.for-business__tabs {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.for-business__tabs-items {
+    width: 50%;
+    flex-grow: 1;
+    position: relative;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
+}
+
+.for-business__tabs-item {
+    min-height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.6s, transform 0s linear 0.6s, visibility 0s linear 0.6s;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(20%);
+
+    &.active {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        z-index: 2;
+        transform: translateX(0);
+        transition: all 0.6s, transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+}
+
+.for-business__tabs-nav {
+    width: 35rem;
+    margin-left: 5rem;
+    @include breakpoint(mobile) {
+        margin: 0;
+        width: 100%;
+        order: -1;
+        margin-bottom: 2rem;
+    }
+}
+
+@keyframes movingBar {
+    from {
+        transform: translateZ(0) scaleX(0);
+    }
+
+    to {
+        transform: translateZ(0) scaleX(1);
+    }
+}
+
+.for-business__tabs-nav-link {
+    padding: 1.5rem;
+    padding-top: 2.5rem;
+    padding-bottom: 4.4rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 120%;
+    transition: color 0.2s;
+
+    &:link,
+    &:visited {
+        color: inherit;
+    }
+
+    &.active {
+        color: var(--primary-color);
+        
+    }
+
+    .low-vision &.active {
+        color: black;
+    }
+
+    .autoplay-disabled &.active {
+        .for-business__countdown {
+            background-color: var(--primary-color);
+
+           
+        }
+    }
+
+    &.current {
+        .for-business__countdown::after {
+            animation-name: movingBar;
+            animation-duration: inherit;
+
+            animation-timing-function: linear;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        padding: 1.4rem 0.5rem;
+        min-height: 6rem;
+    }
+}
+
+.for-business__countdown {
+    height: 0.3rem;
+    background: #eeeeee;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-duration: inherit;
+    transition: background-color 0.2s;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color);
+        transform-origin: left center;
+        transform: translateZ(0) scaleX(0);
+
+        .low-vision & {
+            background-color: black;
+        }
+    }
+}
+
+.for-business__tabs-nav-link-icon-container {
+    width: 5.4rem;
+    height: 5.4rem;
+    flex-shrink: 0;
+    margin-right: 2.5rem;
+    position: relative;
+
+    @include breakpoint(mobile) {
+        width: 3rem;
+        height: 3rem;
+        margin-right: 1.5rem;
+    }
+}
+
+.for-business__tabs-nav-link-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    fill: var(--secondary-color);
+    transition: fill 0.2s;
+    @include objectFitContain();
+
+
+
+    .for-business__tabs-nav-link.active & {
+        fill: var(--primary-color);
+    }
+
+
+    .low-vision & {
+        fill: black !important;
+    }
+}
+
+.for-business__card-title {
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 120%;
+    margin-bottom: 3.5rem;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.for-business__card-text {
+    font-size: 2rem;
+    line-height: 146%;
+    margin-bottom: 4.5rem;
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.for-business__card-link {
+    padding: 2.4rem;
+    background: #ecf3dc;
+    border-radius: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 120%;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s, color 0.2s;
+    svg {
+        fill: var(--primary-color);
+        width: 1rem;
+        height: 1.4rem;
+        flex-shrink: 0;
+        margin-left: 1rem;
+        transition: fill 0.2s;
+        @include breakpoint(mobile) {
+            width: 0.7rem;
+            height: 1.1rem;
+            margin-left: 1.5rem;
+        }
+    }
+
+    &:hover {
+        background-color: var(--primary-color);
+        color: white;
+
+        svg {
+            fill: white;
+        }
+    }
+
+    .low-vision & {
+        background: transparent;
+        border: 1px solid black;
+        color: black;
+        &:link,
+        &:visited {
+            color: black;
+        }
+        svg {
+            fill: black;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 120%;
+        padding: 1.4rem 1.6rem;
+        border-radius: 0.4rem;
+    }
+}

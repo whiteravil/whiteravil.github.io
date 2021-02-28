@@ -1,0 +1,168 @@
+.search {
+}
+
+.search__results {
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.search__found-results {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 130%;
+    color: #959595;
+    margin-bottom: 5rem;
+
+
+    .low-vision & {
+        color: black;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.search__results-list {
+    margin-bottom: 9.5rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 4rem;
+    }
+}
+
+.search__results-list-item {
+    margin-bottom: 4.8rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+
+.search__results-card {
+    display: flex;
+    flex-direction: column;
+    &:link,
+    &:visited {
+        color: black;
+    }
+
+    &:hover {
+        .search__results-card-label {
+            color: black;
+            border-color: black;
+        }
+
+        .search__results-description {
+            color: black;
+        }
+    }
+}
+
+.search__results-card-label {
+    font-weight: 500;
+    font-size: 1.4rem;
+    line-height: 120%;
+    color: #9c9c9c;
+    padding: 0.8rem 1.3rem;
+    border: 1px solid #acacac;
+    text-align: center;
+    border-radius: 0.4rem;
+    text-transform: uppercase;
+    margin-bottom: 2.8rem;
+    align-self: flex-start;
+    transition: color 0.2s, border-color 0.2s;
+
+
+    .low-vision & {
+        color: black;
+        border-color: black;
+    }
+    @include breakpoint(mobile) {
+        margin-bottom: 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+.search__results-card-text {
+    color: #5f0091;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 130%;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+
+    .low-vision & {
+        color: black;
+    }
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.search__results-description {
+    font-size: 2rem;
+    line-height: 130%;
+    color: #808080;
+    transition: color 0.2s;
+
+    .low-vision & {
+        color: black;
+    }
+    em {
+        color: black;
+        font-style: normal;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+    }
+}
+
+.search__not-found-message {
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 120%;
+    margin-bottom: 2.2rem;
+    color: #8a8a8a;
+
+    .low-vision & {
+        color: black;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.search__not-found-suggestion {
+    font-size: 1.8rem;
+    line-height: 150%;
+
+    a {
+        font-weight: 700;
+        &:link,
+        &:visited {
+            color: var(--primary-color);
+        }
+
+        .low-vision & {
+            color: black !important;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+}

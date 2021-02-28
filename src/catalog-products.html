@@ -1,0 +1,14 @@
+{% set title = "Банк Казани - Каталог продуктов" %}
+{% set activePage = "Home"  %}
+{% set navigationText = "dark"  %}
+{% extends "layout.html" %}
+{% block content %}
+    {% include "partials/bank-menu-product.html" %}
+    {% include "blocks/navigation-short-fullscreen.html" %}
+    <div data-barba="wrapper">
+        <div data-barba="container" data-barba-namespace="home">
+            {% include "blocks/catalog-products.html" %}
+        
+        </div>
+    </div>
+{% endblock %}

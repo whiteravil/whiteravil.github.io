@@ -1,0 +1,127 @@
+<section class="application">
+    <div class="container">
+        <div class="inner-container">
+            <a href="#" class="article__go-back">
+                <svg width="14" height="10" aria-hidden="true" class="icon-arrow-up">
+                    <use xlink:href="#arrow-up" />
+                </svg>
+                Вернуться</a
+            >
+            <h1 class="article__main-heading">
+                Заявка на кредит для бизнеса
+            </h1>
+            <div class="article__description">
+                <p>
+                    Кредит на обеспечение исполнения обязательств по контракту в рамках 44-ФЗ, 223-ФЗ. Принятие решения в течение 8 рабочих часов!
+                </p>
+            </div>
+            <form action="/" method="POST" class="application__form application__form--small" data-need-validation id="application-form">
+                <div class="application__form-progress">
+                    <div class="application__form-progress-bar"></div>
+                </div>
+                
+                <div class="application__form-fields">
+                   
+                    <div class="application__form-fields-group">
+                        <label class="application__form-label">
+                            <span class="appliaction__form-label-text">
+                                Имя и фамилия
+                            </span>
+                            <span class="application__form-input-wrapper">
+                                <input type="text" name="name" class="application__form-input" required />
+                                <svg width="25" height="25" aria-hidden="true" class="icon-success">
+                                    <use xlink:href="#success" />
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="application__form-fields-group">
+                        <label class="application__form-label">
+                            <span class="appliaction__form-label-text">
+                                Номер телефона
+                            </span>
+                            <span class="application__form-input-wrapper">
+                                <input type="tel" name="tel" class="application__form-input js-phone-input" required data-parsley-phone placeholder="+7" />
+                                <svg width="25" height="25" aria-hidden="true" class="icon-success">
+                                    <use xlink:href="#success" />
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
+                    <div class="application__form-fields-group">
+                        <label class="application__form-label">
+                            <span class="appliaction__form-label-text">
+                                E-mail
+                            </span>
+                            <span class="application__form-input-wrapper">
+                                <input type="email" name="email" class="application__form-input" required />
+                                <svg width="25" height="25" aria-hidden="true" class="icon-success">
+                                    <use xlink:href="#success" />
+                                </svg>
+                            </span>
+                        </label>
+                    </div>
+                   
+                    <div class="application__form-fields-group">
+                        <label class="application__form-label">
+                            <span class="appliaction__form-label-text">
+                                <span class="visually-hidden">
+                                    Согласие на обработку персональных данных
+                                </span>
+                            </span>
+                            <span class="application__form-input-wrapper">
+                                <label class="open-account__privacy-policy-checkbox">
+                                    <input type="checkbox" name="policy" class="open-account__privacy-policy-checkbox-input" checked="" required>
+                                    <span class="open-account__privacy-policy-checkbox-mark">
+                                        <svg width="16" height="16" aria-hidden="true" class="icon-checkmark">
+                                            <use xlink:href="#checkmark"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="open-account__privacy-policy-checkbox-text">
+                                        Нажимая кнопку "Отправить", я соглашаюсь с условиями обработки персональных данных
+                                    </span>
+                                </label>
+                            </span>
+                        </label>
+                    </div>
+                    <button type="submit" class="application__form-submit">
+                        Оформить заявку
+                    </button>
+                </div>
+                <div class="application__form-success">
+                    <div class="application__form-success-row">
+                        <div class="application__form-success-left-col">
+                            <h4 class="application__form-success-heading">
+                                Готово!<img src="img/ok.svg" alt=""> <br>  Ваша заявка успешно оформлена
+                            </h4>
+                            <div class="application__form-success-text">
+                                <p>
+                                    Мы сформируем кредитное предложение на основе предоставленных данных и свяжемся с вами в течении 3 дней
+                                </p>
+                            </div>
+                            <a href="#" class="application__form-success-return-link">
+                                Вернуться на главную
+                            </a>
+                        </div>
+                        <div class="application__form-success-right-col">
+                            <img src="img/success-small.jpg" alt="" class="application__form-success-image">
+                            <h5 class="application__form-success-right-heading">
+                                Бесплатный<br>мобильный банк
+                            </h5>
+
+                            <div class="application__form-success-marketplace-links">
+                                <a href="#" class="application__form-success-marketplace-link">
+                                    <img src="img/app-store.png" alt="" class="application__form-success-marketplace-link-image">
+                                </a>
+                                <a href="#" class="application__form-success-marketplace-link">
+                                    <img src="img/playstore.png" alt="" class="application__form-success-marketplace-link-image">
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

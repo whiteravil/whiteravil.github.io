@@ -1,0 +1,314 @@
+.general-rules {
+    background-color: #fff;
+    padding-top: 7rem;
+    padding-bottom: 4rem;
+    .tab-items__item & {
+        padding-bottom: 0;
+    }
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+        padding-bottom: 2rem;
+        .tab-items__item & {
+            padding-bottom: 0;
+        }
+    }
+
+  
+}
+
+.general-rules__heading {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 120%;
+    margin-bottom: 1.8rem;
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+    }
+}
+
+.general-rules__table {
+    position: relative;
+    padding-right: 5rem;
+    padding-top: 2.4rem;
+    padding-bottom: 2.4rem;
+    z-index: 1;
+
+    
+  
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+    table,
+    tbody,
+    thead {
+        display: block;
+        width: 100%;
+    }
+
+    tr {
+        display: flex;
+        align-items: baseline;
+        border-bottom: 1px solid rgba(#c8c8c8, 0.5);
+        padding: 2.2rem 0;
+        &:last-child {
+            border-bottom: none;
+        }
+
+        .low-vision & {
+            border-color: black;
+        }
+
+        @include breakpoint(mobile) {
+            flex-direction: column;
+            align-items: initial;
+            padding: 1.5rem 0;
+        }
+    }
+
+    th,
+    td {
+        text-align: left;
+        display: flex;
+        align-items: center;
+    }
+
+    th {
+        font-weight: 500;
+        font-size: 1.4rem;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #717171;
+        width: 38rem;
+        flex-shrink: 0;
+        padding-right: 7rem;
+
+        .low-vision & {
+            color: black !important;
+        }
+        @include breakpoint(mobile) {
+            width: 100%;
+            flex-shrink: 1;
+            margin-bottom: 1rem;
+            padding-right: 0;
+        }
+    }
+
+    td {
+        width: 50%;
+        flex-grow: 1;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 120%;
+
+        .link-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            
+        }
+
+        .details-link {
+            padding: 1.4rem;
+            display: inline-flex;
+            align-items: center;
+            background: #ffffff;
+            border-radius: 1rem;
+            color: black;
+            font-weight: 500;
+            font-size: 1.4rem;
+            line-height: 120%;
+            text-transform: uppercase;
+            transition: all .2s;
+            &:link,
+            &:visited {
+                color: black;
+            }
+
+            svg {
+                width: 1.4rem;
+                height: 0.8rem;
+                fill: #B6B6B6;
+                flex-shrink: 0;
+                margin-left: 1rem;
+                align-self: center;
+                margin-bottom: 0.2em;
+                transition: fill .2s;
+
+
+                .low-vision & {
+                    fill: black;
+                }
+            }
+
+
+            .no-touch &:hover,
+            .touch &:active {
+                background: black;
+                color: white;
+                svg {
+                    fill: white !important;
+                }
+            }
+
+
+            @include breakpoint(mobile) {
+                font-size: 1.2rem;
+                background: black;
+                color: white;
+                &:link,
+                &:visited {
+                    color: white;
+                }
+                svg {
+                    fill: white;
+                    width: 1.2rem;
+                    height: 0.6rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @include breakpoint(mobile) {
+            width: 100%;
+            flex-grow: 0;
+            font-size: 1.6rem;
+        }
+    }
+
+    b {
+        font-weight: 500;
+    }
+
+    ul:not([class]) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -1.4rem -1.6rem;
+
+        @include breakpoint(mobile) {
+            margin: -1rem;
+        }
+
+        li {
+            width: 50%;
+            padding: 1.4rem 1.6rem;
+
+            @include breakpoint(mobile) {
+                padding: 1rem;
+                width: 100%;
+            }
+        }
+    }
+
+    table p:not([class]) {
+        font-size: 1.6rem;
+        line-height: 130%;
+        color: #888888;
+        margin-bottom: 1rem;
+        font-weight: 400;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+
+        .low-vision & {
+            color: black;
+            font-size: 1.8rem;
+            @include breakpoint(mobile) {
+                font-size: 1.6rem;
+            }
+        }
+        @include breakpoint(mobile) {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+    }
+
+    
+
+    svg {
+        width: 2rem;
+        height: 2rem;
+        align-self: baseline;
+        flex-shrink: 0;
+        fill: #c6c6c6;
+        margin-left: 0.5rem;
+
+        .low-vision & {
+            fill: black !important;
+        }
+
+        @include breakpoint(mobile) {
+            width: 1.6rem;
+            height: 1.6rem;
+            margin: 0;
+        }
+    }
+    .amount {
+        font-weight: 500;
+        font-size: 3rem;
+        line-height: 120%;
+
+        @include breakpoint(mobile) {
+            font-size: 2rem;
+        }
+    }
+}
+
+.general-rules__backplate {
+    position: absolute;
+    background: #fafafa;
+    border-radius: 1rem;
+    right: 0;
+    top: 0;
+    left: 33rem;
+    bottom: 0;
+    z-index: -1;
+    box-shadow: 0 1rem 0.6rem rgba(black, 0.04);
+
+
+    .low-vision & {
+        display: none;
+    }
+
+    &--people {
+        background-image: url('../img/generals-rules-bg.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        box-shadow: none;
+    }
+
+    @include breakpoint(mobile) {
+        display: none;
+    }
+}
+
+
+
+.table-remark {
+    margin-top: 3rem;
+}
+
+.table-remark p {
+        
+    font-size: 1.4rem;
+    line-height: 120%;
+    color: #a5a5a5;
+    max-width: none;
+    margin-bottom: 1.5rem;
+
+
+    .low-vision & {
+        font-size: 1.8rem;
+        color: black;
+        @include breakpoint(mobile) {
+            font-size: 1.2rem;
+        }
+    }
+    @include breakpoint(mobile) {
+        margin: 1.5rem 0;
+        font-size: 1.2rem;
+    }
+}

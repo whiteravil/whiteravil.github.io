@@ -1,0 +1,61 @@
+.asv__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        justify-content: initial;
+        align-items: initial;
+    }
+}
+
+.asv__text-col {
+    max-width: 72rem;
+    width: 50%;
+    flex-grow: 1;
+
+    font-size: 1.8rem;
+    line-height: 130%;
+
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        width: 100%;
+        max-width: none;
+        flex-grow: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+.asv__insurance-col {
+    display: flex;
+    align-items: center;
+}
+
+.asv__insurance-from-date {
+    font-size: 1.6rem;
+    color: #888888;
+    line-height: 130%;
+    margin-right: 3.3rem;
+
+    .low-vision & {
+        color: black;
+    }
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        margin-right: 2rem;
+    }
+}
+
+.asv__insurance-image {
+    width: 10rem;
+    height: auto;
+
+    .low-vision & {
+        filter: grayscale(100%);
+    }
+    @include breakpoint(mobile) {
+        width: 5rem;
+    }
+}

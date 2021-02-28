@@ -1,0 +1,120 @@
+.personel {
+}
+
+.personel__item {
+    margin-bottom: 6.5rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 4rem;
+    }
+}
+
+.personel__item-heading {
+    font-weight: 500;
+    font-size: 3.6rem;
+    line-height: 120%;
+    color: #000000;
+    margin-bottom: 3.8rem;
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.personel__item-subheading {
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 130%;
+    color: #959595;
+    margin-bottom: 1.9rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.personel__item-top {
+    border-bottom: 1px solid rgba(#b4b4b4, 0.5);
+}
+
+.personel__item-bottom {
+    padding-top: 4.3rem;
+    @include breakpoint(mobile) {
+        padding-top: 1.8rem;
+    }
+}
+
+.personel__team-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2rem;
+    @include breakpoint(mobile) {
+        margin: -1rem;
+    }
+}
+
+.personel__team-list-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+.personel__docs-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2rem;
+    @include breakpoint(mobile) {
+        margin: -1rem;
+    }
+}
+
+.personel__docs-list-item {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+.personel__team-card {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    font-size: 2rem;
+    line-height: 120%;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+    }
+}
+
+.personel__team-role,
+.personel__team-name {
+    margin-bottom: 1.5rem;
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 1rem;
+    }
+}
+
+.personel__team-name {
+    font-weight: 700;
+}
+
+.personel__content {
+    margin-top: 7rem;
+    @include breakpoint(mobile) {
+        margin-top: 2rem;
+    }
+}

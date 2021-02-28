@@ -1,0 +1,229 @@
+.success-story {
+    padding-bottom: 10rem;
+    @include breakpoint(mobile) {
+        padding-bottom: 4rem;
+    }
+}
+
+.success-story__heading {
+    font-weight: bold;
+    font-size: 6.4rem;
+    line-height: 120%;
+    margin-bottom: 8rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.4rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+}
+
+.success-story__row {
+    display: flex;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.success-story__left-col {
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        margin-bottom: 3rem;
+    }
+}
+
+.success-story__right-col {
+    width: 64rem;
+    margin-left: 6.5rem;
+    flex-shrink: 0;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin: 0;
+        flex-shrink: 1;
+    }
+}
+
+.success-story__name {
+    font-weight: 500;
+    font-size: 3.2rem;
+    line-height: 100%;
+    margin-bottom: 1.6rem;
+
+
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+    }
+}
+
+.success-story__role {
+    font-size: 2rem;
+    line-height: 140%;
+    margin-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.success-story__text {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 3rem;
+    }
+    p {
+        margin-bottom: 1.5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.success-story__history-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2rem -2.5rem;
+
+    @include breakpoint(mobile) {
+        margin: -1.6rem;
+    }
+}
+
+.success-story__history-list-item {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 50%;
+    padding: 2rem 2.5rem;
+
+    @include breakpoint(mobile) {
+        padding: 1.6rem;
+    }
+}
+
+.success-story__history-card-year {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.8rem;
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    margin-bottom: 1.8rem;
+    padding-bottom: 1rem;
+
+
+    .low-vision & {
+        color: black;
+        border-color: black;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        border-bottom: 2px solid var(--primary-color);
+        margin-bottom: 1.4rem;
+
+        .low-vision & {
+            border-color: black;
+        }
+    }
+}
+
+.success-story__history-text {
+    font-size: 2rem;
+    line-height: 2.8rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 1.2;
+    }
+}
+
+.success-story__image-block {
+    padding-right: 6.2rem;
+    position: relative;
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+
+        .low-vision & {
+            filter: grayscale(100%);
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.success-story__image-block-quote {
+    width: 39.2rem;
+    flex-shrink: 0;
+    position: absolute;
+    right: 0;
+    bottom: 2.2rem;
+    background: #ecf3dc;
+    color: black;
+    padding: 3.6rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    z-index: 1;
+
+    .low-vision & {
+        background-color: #fff;
+        border: 1px solid black;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        pointer-events: none;
+        background-image: url('../img/quote.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 5.4rem;
+        height: 4.2rem;
+        top: 1.4rem;
+        left: 1.6rem;
+
+        .low-vision & {
+            filter: grayscale(100%) brightness(0);
+        }
+
+        @include breakpoint(mobile) {
+            width: 3rem;
+            height: 2rem;
+            left: 1rem;
+            top: 1rem;
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        width: auto;
+        left: 1.4rem;
+        right: 1.4rem;
+        bottom: 1.4rem;
+        padding: 2rem;
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+}

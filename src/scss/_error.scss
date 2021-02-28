@@ -1,0 +1,143 @@
+.error {
+    min-height: 100vh;
+    width: 100%;
+    background-image: url('../img/error-bg.svg');
+    background-size: 66px 116px;
+    background-repeat: repeat;
+    background-position: center;
+
+
+    .low-vision & {
+        background-image: none;
+    }
+
+    @include breakpoint(mobile) {
+        background-size: 33px 58px;
+    }
+}
+
+.error__card {
+    padding: 6.4rem;
+    padding-bottom: 6rem;
+    background-color: var(--secondary-color);
+    color: white;
+    width: 100%;
+    max-width: 63rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    .low-vision & {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+    }
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        max-width: 100%;
+        border-bottom-left-radius: 0.8rem;
+        border-bottom-right-radius: 0.8rem;
+    }
+}
+
+.error__card-logo {
+    margin-bottom: 9.5rem;
+    display: inline-block;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 6rem;
+    }
+}
+
+.error__card-logo-image {
+    display: block;
+    width: 20rem;
+    height: auto;
+
+    .low-vision & {
+        filter: grayscale(100%) brightness(0);
+    }
+    @include breakpoint(mobile) {
+        width: 18rem;
+    }
+}
+
+.error__card-code {
+    font-size: 18rem;
+    line-height: 1.1;
+    font-weight: 400;
+    @include breakpoint(mobile) {
+        font-size: 12rem;
+    }
+}
+
+.error__card-details {
+    font-weight: bold;
+    font-size: 4.8rem;
+    line-height: 4.8rem;
+    margin-bottom: 18.3rem;
+    @include breakpoint(mobile) {
+        font-size: 2.8rem;
+        line-height: 1.2;
+        margin-bottom: 7rem;
+    }
+}
+
+.error__card-other-pages-heading {
+    font-size: 2.6rem;
+    line-height: 130%;
+    margin-bottom: 1.7rem;
+    font-weight: 400;
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+}
+
+.error__card-nav {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: -1rem;
+}
+
+.error__card-nav-link {
+    font-size: 1.6rem;
+    line-height: 130%;
+    color: #ffffff;
+    position: relative;
+    transition: color 0.2s;
+    margin-right: 1.5rem;
+    transition: color 0.2s;
+    margin-bottom: 1rem;
+    @include breakpoint(mobile) {
+      
+        font-size: 1.4rem;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    &:hover {
+        color: var(--primary-color);
+    }
+
+
+    .low-vision & {
+        color: black !important;
+    }
+    &::after {
+        content: '';
+        top: 100%;
+        left: 0;
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        background-color: currentColor;
+        pointer-events: none;
+    }
+}

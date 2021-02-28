@@ -1,0 +1,232 @@
+{% set title = "Банк Казани - Таблица" %} {% set activePage = "Home" %} {% set navigationText = "dark" %} {% extends "layout.html" %} {% block content %} {% include "partials/bank-menu-product.html" %} {% include
+"blocks/navigation-short-fullscreen.html" %}
+<div data-barba="wrapper">
+    <div data-barba="container" data-barba-namespace="home">
+        <div class="catalog">
+            <div class="container">
+                <div class="catalog__layout-row">
+                    <div class="catalog__left-col">
+                        <div class="catalog__menu">
+                            <a href="#" class="catalog__menu-link">
+                                Расчетно-кассовое обслуживание
+                            </a>
+                            <a href="#" class="catalog__menu-link active">
+                                Кредиты бизнеcу
+                            </a>
+                            <a href="#" class="catalog__menu-link">
+                                Депозиты бизнесу
+                            </a>
+                            <a href="#" class="catalog__menu-link">
+                                Банковские гарантии
+                            </a>
+                            <a href="#" class="catalog__menu-link">
+                                Пластиковые карты
+                            </a>
+                        </div>
+                    </div>
+                    <div class="catalog__right-col">
+                        <section class="new-callback">
+                            <div class="container">
+                                <div class="inner-container">
+                                    <h2 class="new-callback__heading">
+                                        Обратная связь
+                                    </h2>
+
+                                    <form action="/" method="POST" class="application__form application__form--new-callback" data-need-validation id="new-callback-form">
+                                        <div class="application__form-fields">
+                                            <div class="application__form-fields-group">
+                                                <label class="application__form-label">
+                                                    <span class="appliaction__form-label-text">
+                                                        Тип клиента
+                                                    </span>
+                                                    <span class="application__form-input-wrapper">
+                                                        <div class="application__form-inner-tabs-nav application__form-inner-tabs-nav--standalone">
+                                                            <label class="application__form-inner-tabs-checkbox">
+                                                                <input type="radio" name="mode" value="phys" class="application__form-inner-tabs-checkbox-input" checked="" data-parsley-multiple="mode" />
+                                                                <span class="application__form-inner-tabs-checkbox-text">
+                                                                    Физ.лицо
+                                                                </span>
+                                                            </label>
+                                                            <label class="application__form-inner-tabs-checkbox">
+                                                                <input type="radio" name="mode" value="yur" class="application__form-inner-tabs-checkbox-input" data-parsley-multiple="mode" />
+                                                                <span class="application__form-inner-tabs-checkbox-text">
+                                                                    Юр.лицо
+                                                                </span>
+                                                            </label>
+                                                            <label class="application__form-inner-tabs-checkbox">
+                                                                <input type="radio" name="mode" value="ip" class="application__form-inner-tabs-checkbox-input" data-parsley-multiple="mode" />
+                                                                <span class="application__form-inner-tabs-checkbox-text">
+                                                                    Инд.предприниматель
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="application__form-fields-group">
+                                                <label class="application__form-label">
+                                                    <span class="appliaction__form-label-text">
+                                                        ФИО
+                                                    </span>
+                                                    <span class="application__form-input-wrapper">
+                                                        <input type="text" name="name" class="application__form-input" required />
+                                                        <svg width="25" height="25" aria-hidden="true" class="icon-success">
+                                                            <use xlink:href="#success" />
+                                                        </svg>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="application__form-fields-group">
+                                                <label class="application__form-label">
+                                                    <span class="appliaction__form-label-text">
+                                                        E-mail
+                                                    </span>
+                                                    <span class="application__form-input-wrapper">
+                                                        <input type="email" name="email" class="application__form-input" required />
+                                                        <svg width="25" height="25" aria-hidden="true" class="icon-success">
+                                                            <use xlink:href="#success" />
+                                                        </svg>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="application__form-fields-group">
+                                                <label class="application__form-label">
+                                                    <span class="appliaction__form-label-text">
+                                                        Телефон
+                                                    </span>
+                                                    <span class="application__form-input-wrapper application__form-input-wrapper--short">
+                                                        <input type="tel" name="tel" class="application__form-input js-phone-input" required data-parsley-phone placeholder="+7" />
+                                                        <svg width="25" height="25" aria-hidden="true" class="icon-success">
+                                                            <use xlink:href="#success" />
+                                                        </svg>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="application__form-fields-group">
+                                                <label class="application__form-label application__form-label--centered">
+                                                    <span class="appliaction__form-label-text">
+                                                        Как вы хотите<br />
+                                                        получить ответ?
+                                                    </span>
+                                                    <span class="application__form-input-wrapper">
+                                                        <div class="application__form-inner-tabs-nav application__form-inner-tabs-nav--standalone ">
+                                                            <label class="application__form-inner-tabs-checkbox">
+                                                                <input type="radio" name="response" value="phys" class="application__form-inner-tabs-checkbox-input" checked="" data-parsley-multiple="mode" />
+                                                                <span class="application__form-inner-tabs-checkbox-text">
+                                                                    По эл.почте
+                                                                </span>
+                                                            </label>
+                                                            <label class="application__form-inner-tabs-checkbox">
+                                                                <input type="radio" name="response" value="yur" class="application__form-inner-tabs-checkbox-input" data-parsley-multiple="mode" />
+                                                                <span class="application__form-inner-tabs-checkbox-text">
+                                                                    По телефону
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                            <div class="application__form-fields-group">
+                                                <label class="application__form-label">
+                                                    <span class="appliaction__form-label-text">
+                                                        Сообщение
+                                                    </span>
+                                                    <span class="application__form-input-wrapper">
+                                                        <div class="application__form-textarea-wrapper">
+                                                            <textarea name="comment" id="comment" class="application__form-input"></textarea>
+                                                            <svg width="25" height="25" aria-hidden="true" class="icon-success">
+                                                                <use xlink:href="#success" />
+                                                            </svg>
+                                                        </div>
+
+                                                        <div class="application__form-file-upload js-file-upload">
+                                                            <div class="application__form-file-upload-dropzone application__form-file-upload-dropzone--short js-file-upload-dropzone" data-upload-text="Загрузить изображение">
+                                                                <label class="application__form-file-upload-label js-file-upload-label">
+                                                                    <input type="file" name="file[]" accept=".tif, .tiff, .bmp, .jpg, .jpeg, .png, .doc, .docx, .rtf, .pdf" />
+                                                                </label>
+                                                                <label class="application__form-file-upload-label js-file-upload-label">
+                                                                    <input type="file" name="file[]" accept=".tif, .tiff, .bmp, .jpg, .jpeg, .png, .doc, .docx, .rtf, .pdf" />
+                                                                </label>
+                                                                <label class="application__form-file-upload-label js-file-upload-label">
+                                                                    <input type="file" name="file[]" accept=".tif, .tiff, .bmp, .jpg, .jpeg, .png, .doc, .docx, .rtf, .pdf" />
+                                                                </label>
+                                                                <label class="application__form-file-upload-label js-file-upload-label">
+                                                                    <input type="file" name="file[]" accept=".tif, .tiff, .bmp, .jpg, .jpeg, .png, .doc, .docx, .rtf, .pdf" />
+                                                                </label>
+                                                                <label class="application__form-file-upload-label js-file-upload-label">
+                                                                    <input type="file" name="file[]" accept=".tif, .tiff, .bmp, .jpg, .jpeg, .png, .doc, .docx, .rtf, .pdf" />
+                                                                </label>
+                                                                <label class="application__form-file-upload-label js-file-upload-label">
+                                                                    <input type="file" name="file[]" accept=".tif, .tiff, .bmp, .jpg, .jpeg, .png, .doc, .docx, .rtf, .pdf" />
+                                                                </label>
+                                                              
+                                                                <div class="application__form-file-upload-files js-file-upload-files">
+                                                                 
+                                                                    <div class="application__form-file-upload-files-appended">
+                                                                        <ul class="application__form-file-upload-files-list js-filelist"></ul>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="application__form-file-upload-message application__form-file-upload-message--short">
+                                                                    <span class="application__form-file-upload-message-choose-file application__form-file-upload-message-choose-file--with-shadow">
+                                                                        <span class="application__form-file-upload-message-choose-file-text js-full-text" data-full-text="Выбрано максимальное количество файлов">
+                                                                            Выбрать файл
+                                                                        </span>
+
+                                                                        <svg width="10" height="10" aria-hidden="true" class="icon-upload">
+                                                                            <use xlink:href="#upload"></use>
+                                                                        </svg>
+                                                                    </span>
+                                                                    <div class="application__form-file-upload-message-format">
+                                                                        <h5 class="application__form-file-upload-message-format-heading js-file-upload-action">
+                                                                            Перетащите изображения в окно<br> или нажмите для выбора
+                                                                        </h5>
+                                                                        <p>
+                                                                            Максимальный размер загружаемого файла 10M в формате
+                                                                        </p>
+                                                                        <p>
+                                                                            Максимальное количество файлов - 5 шт.
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+
+                                            <div class="application__form-fields-group">
+                                                <label class="application__form-label">
+                                                    <span class="appliaction__form-label-text"> </span>
+                                                    <span class="application__form-input-wrapper">
+                                                        <div class="application__policy-row">
+                                                            <label class="open-account__privacy-policy-checkbox">
+                                                                <input type="checkbox" name="policy" class="open-account__privacy-policy-checkbox-input" checked="" required />
+                                                                <span class="open-account__privacy-policy-checkbox-mark">
+                                                                    <svg width="16" height="16" aria-hidden="true" class="icon-checkmark">
+                                                                        <use xlink:href="#checkmark"></use>
+                                                                    </svg>
+                                                                </span>
+                                                                <span class="open-account__privacy-policy-checkbox-text">
+                                                                    Нажимая кнопку "Отправить", я соглашаюсь с условиями обработки персональных данных
+                                                                </span>
+                                                            </label>
+                                                            <button type="submit" class="application__form-submit">
+                                                                Отправить заявку
+                                                            </button>
+                                                        </div>
+                                                    </span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

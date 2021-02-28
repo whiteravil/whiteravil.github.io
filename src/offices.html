@@ -1,0 +1,15 @@
+{% set title = "Банк Казани - Офисы и банкоматы" %}
+{% set activePage = "Home"  %}
+{% set navigationText = "dark"  %}
+{% extends "layout.html" %}
+{% block content %}
+    {% include "partials/bank-menu-product.html" %}
+    {% include "blocks/navigation-short.html" %}
+    <div data-barba="wrapper">
+        <div data-barba="container" data-barba-namespace="home">
+            {% include "blocks/offices.html" %}
+          
+           
+        </div>
+    </div>
+{% endblock %}

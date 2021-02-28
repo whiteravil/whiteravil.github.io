@@ -1,0 +1,45 @@
+.picture-block {
+    margin-bottom: 6rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 3rem;
+    }
+}
+.picture-block__btn {
+    background: #94c22b;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    line-height: 120%;
+    color: white;
+    padding: 2.1rem 2.6rem;
+    transition: background-color 0.3s;
+    margin-top: 1.5rem;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--primary-color-hover);
+    }
+
+
+    .low-vision & {
+        background-color: black !important;
+        color: white !important;
+    }
+
+    @include breakpoint(mobile) {
+        font-weight: 500;
+        font-size: 1rem;
+        line-height: 120%;
+        padding: 1.4rem;
+        border-radius: 0.4rem;
+        margin-right: 2.5rem;
+        margin-top: .8rem;
+    }
+}

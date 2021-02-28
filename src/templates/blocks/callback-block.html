@@ -1,0 +1,32 @@
+<section class="callback">
+    <div class="container">
+        <div class="callback__row">
+            <h2 class="callback__heading">
+                Выбираете банк для обслуживания? <br> Мы поможем определиться!
+            </h2>
+            <form action="/" method="POST" class="callback__form" data-need-validation>
+                <div class="callback__form-main-wrapper">
+                    <div class="callback__input-wrapper">
+                        <input type="tel" name="tel" class="callback__input js-phone-input" required data-parsley-phone placeholder="+7">
+                    </div>
+                    <button type="submit" class="callback__submit-btn">
+                        бесплатная консультация
+                    </button>
+                </div>
+                
+
+                <label class="open-account__privacy-policy-checkbox">
+                    <input type="checkbox" name="policy" class="open-account__privacy-policy-checkbox-input" checked="" required="">
+                    <span class="open-account__privacy-policy-checkbox-mark open-account__privacy-policy-checkbox-mark--white">
+                        <svg width="16" height="16" aria-hidden="true" class="icon-checkmark">
+                            <use xlink:href="#checkmark"></use>
+                        </svg>
+                    </span>
+                    <span class="open-account__privacy-policy-checkbox-text">
+                        Нажимая кнопку "Отправить", я соглашаюсь с условиями обработки персональных данных
+                    </span>
+                </label>
+            </form>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,138 @@
+.application-steps {
+    margin-bottom: 6rem;
+    margin-top: 4.5rem;
+
+    @include breakpoint(mobile) {
+        margin: 2rem 0;
+    }
+}
+
+.application-steps__items {
+    display: flex;
+    background: #fbfbfb;
+    border-radius: 1rem;
+    overflow: hidden;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        border-radius: .8rem;
+    }
+}
+
+.application-steps__item {
+   
+
+    @include breakpointMF(small-tablet) {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        &:nth-child(1) {
+            margin-right: -6rem;
+
+            background: #efefef;
+            clip-path: polygon(0 0, calc(100% - 6rem) 0, 100% 50%, calc(100% - 6rem) 100%, 0 100%);
+            position: relative;
+            z-index: 10;
+        }
+
+        &:nth-child(2) {
+            padding-left: 6rem;
+            background: #f5f5f5;
+            margin-right: -6rem;
+            clip-path: polygon(0 0, calc(100% - 6rem) 0, 100% 50%, calc(100% - 6rem) 100%, 0 100%);
+            position: relative;
+            z-index: 5;
+        }
+
+        &:nth-child(3) {
+            padding-left: 6rem;
+            position: relative;
+            z-index: 1;
+            background: #fbfbfb;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        &:nth-child(1) {
+            background: #efefef;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
+            padding-bottom: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+        &:nth-child(2) {
+            background: #f5f5f5;
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 2rem), 50% 100%, 0 calc(100% - 2rem));
+            padding-bottom: 2rem;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 5;
+        }
+        &:nth-child(3) {
+            background: #fbfbfb;
+            
+            
+            margin-top: -2rem;
+            position: relative;
+            z-index: 1;
+        }
+    }
+}
+
+.application-steps__card {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+    }
+}
+
+.application-steps__card-number {
+    width: 5.8rem;
+    height: 5.8rem;
+    flex-shrink: 0;
+    font-weight: bold;
+    font-size: 2.8rem;
+    line-height: 120%;
+    border: 0.4rem solid #94c22b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    border-radius: 50%;
+    color: var(--primary-color);
+    @include breakpoint(mobile) {
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 1.4rem;
+        border: 0.2rem solid #94c22b;
+    }
+}
+
+.application-steps__card-heading {
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 120%;
+    margin-bottom: 1rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.application-steps__card-text {
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+}

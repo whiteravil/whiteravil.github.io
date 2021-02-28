@@ -1,0 +1,75 @@
+@import 'vendor';
+@import 'mixins';
+@import 'fontface';
+@import 'global';
+@import 'layout';
+@import 'text';
+@import 'page-footer';
+@import 'page-header';
+@import 'tabs-nav';
+@import 'tab-items';
+@import 'custom-select';
+@import 'range-slider';
+@import 'bank-menu';
+@import 'breadcrumbs';
+@import 'pagination';
+@import 'error';
+
+
+// Blocks styles
+
+@import 'blocks/rating-block';
+@import 'blocks/products-block';
+@import 'blocks/news-block';
+@import 'blocks/navigation-block';
+@import 'blocks/currency-block';
+@import 'blocks/callback-block';
+@import 'blocks/calculator-block';
+@import 'blocks/for-business';
+@import 'blocks/general-rules';
+@import 'blocks/product-navigation';
+@import 'blocks/rules';
+@import 'blocks/documents';
+@import 'blocks/calculate-credit';
+@import 'blocks/program-advantages';
+@import 'blocks/flexible-tariffs';
+@import 'blocks/additional-info';
+@import 'blocks/article';
+@import 'blocks/open-account';
+@import 'blocks/catalog';
+@import 'blocks/personel';
+@import 'blocks/contact-bank';
+@import 'blocks/search';
+@import 'blocks/offices';
+@import 'blocks/modal';
+@import 'blocks/application';
+@import 'blocks/advantages';
+@import 'blocks/announcement';
+@import 'blocks/about-bank';
+@import 'blocks/news';
+@import 'blocks/new-about-bank';
+@import 'blocks/special-conditions';
+@import 'blocks/career-contacts';
+@import 'show-more-info';
+@import 'blocks/team';
+@import 'blocks/fullscreen-nav-menu';
+@import 'blocks/similar-news';
+@import 'blocks/asv';
+@import 'blocks/file-card';
+@import 'blocks/picture-block';
+@import 'blocks/two-column-table';
+@import 'blocks/new-asv';
+@import 'blocks/deposit-table';
+@import 'blocks/text-block';
+@import 'blocks/form-success';
+@import 'blocks/application-steps';
+@import 'blocks/cookies';
+@import 'blocks/success';
+@import 'blocks/catalog-products';
+@import 'blocks/success-story';
+@import 'blocks/new-callback';
+
+// Обмен валют
+@import 'blocks/_currency-exchange-main.scss'
+
+

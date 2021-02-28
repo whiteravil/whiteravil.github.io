@@ -1,0 +1,16 @@
+
+{% set title = "Банк Казани - Поиск" %}
+{% set activePage = "Home"  %}
+{% set navigationText = "dark"  %}
+{% extends "layout.html" %}
+{% block content %}
+    {% include "partials/bank-menu-product.html" %}
+    {% include "blocks/navigation-short-search.html" %}
+    <div data-barba="wrapper">
+        <div data-barba="container" data-barba-namespace="home">
+            {% include "blocks/search.html" %}
+          
+            {% include "blocks/contact-bank.html" %}
+        </div>
+    </div>
+{% endblock %}

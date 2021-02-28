@@ -1,0 +1,263 @@
+.contact-bank {
+   padding-bottom: 6rem;
+   padding-top: 6rem;
+   @include breakpoint(mobile) {
+       padding: 2rem 0;
+   }
+}
+
+
+.contact-bank__inner {
+    position: relative;
+    z-index: 1;
+}
+
+.contact-bank__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(white, .4);
+        backdrop-filter: blur(2px);
+        display: none;
+        @include breakpoint(mobile) {
+            display: block;
+        }
+    }
+
+
+    .low-vision & {
+        display: none;
+    }
+}
+
+
+.contact-bank__bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+}
+
+.contact-bank__row {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 7.5rem;
+    padding-bottom: 9rem;
+
+    .low-vision & {
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: initial;
+        padding: 3rem 0;
+    }
+}
+
+.contact-bank__left-col {
+    margin-right: auto;
+    @include breakpoint(mobile) {
+        margin: 0;
+    }
+}
+
+.contact-bank__right-col {
+    max-width: 53.7rem;
+    width: 100%;
+    @include breakpoint(mobile) {
+        max-width: none;
+    }
+}
+
+.contact-bank__heading {
+    font-weight: 500;
+    font-size: 3rem;
+    line-height: 120%;
+
+    @include breakpoint(mobile) {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.contact-bank__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-bank__call-us,
+.contact-bank__leave-request {
+    font-weight: 500;
+    font-size: 2.2rem;
+    line-height: 120%;
+    color: #000000;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+    }
+}
+
+.contact-bank__call-us {
+    margin-bottom: 2.2rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 0.5rem;
+    }
+}
+
+.contact-bank__phone-link {
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: 120%;
+    margin-bottom: 7.2rem;
+    align-self: flex-start;
+    transition: color .2s;
+    &:link,
+    &:visited {
+        color: black;
+    }
+
+
+    &:hover {
+        color: var(--primary-color);
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.contact-bank__leave-request {
+    margin-bottom: 2.7rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 1.5rem;
+    }
+}
+
+.contact-bank__form {
+    display: flex;
+    flex-wrap: wrap;
+
+    .parsley-errors-list {
+        display: none;
+    }
+   
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+
+.contact-bank__checkbox {
+    flex-shrink: 0;
+    width: 100%;
+    margin-top: 1.5rem;
+    flex-basis: auto;
+}
+
+.contact-bank__input-wrapper {
+    width: 50%;
+    flex-grow: 1;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+.contact-bank__input {
+    background: #ffffff;
+    border-radius: 1rem;
+
+    padding: 0 2.2rem;
+    width: 100%;
+    height: 6.4rem;
+    font-size: 2rem;
+    border: 1px solid transparent;
+    transition: border-color .2s;
+
+    &.parsley-error {
+        border-color: #b90e0e;
+    }
+
+    @include placeholder {
+        color: #a0a0a0;
+    }
+
+
+    .low-vision & {
+        border: 1px solid black;
+        color: black; 
+
+        @include placeholder {
+            color: rgba(black, .6);
+        }
+    }
+
+
+    @include breakpoint(mobile) {
+        font-size: 16px;
+        height: 5.2rem;
+        padding: 0 1.8rem;
+        border-radius: .8rem;
+    }
+}
+
+.contact-bank__submit-btn {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: white;
+    padding: 1.2em 2.7rem;
+    min-height: 6.4rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: var(--primary-color);
+    transition: all 0.2s;
+    margin-left: 2rem;
+    border-radius: 1rem;
+    flex-shrink: 0;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+
+    &:hover {
+        background-color: var(--primary-color-hover);
+    }
+
+
+    .low-vision & {
+        background-color: black !important;
+        color: white !important;
+    }
+
+
+    @include breakpoint(mobile) {
+        min-height: auto;
+        margin: 0;
+        border-radius: .8rem;
+        padding: 1.6rem 2.4rem;
+        align-self: flex-start;
+        font-size: 1.4rem;
+    }
+}
