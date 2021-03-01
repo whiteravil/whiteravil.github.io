@@ -384,21 +384,32 @@ $root-size: 9px;
 		border: none;
 	}
 
-	.select-location-item-icon svg path {
-		transition: all .3s ease;
+	.select-location-item-icon svg {
+		width: rem(20px);
+		height: rem(20px);
+		path {
+			transition: all .3s ease;
+		}
 	}
 
 	&.active {
 		color: #fff;
 		background-color: #94C22B;
 		border-color: #94C22B;
-
 		.select-location-item-icon {
 			svg path {
 				fill: #ffffff;
 			}
 		}
 
+	}
+
+	.show-more-info__dropdown {
+		top: -#{rem(5px)};
+		left: auto;
+		right: calc(100% + #{rem(5px)});
+		transform: none !important;
+		padding-top: 0;
 	}
 
 }
@@ -1015,6 +1026,12 @@ $root-size: 9px;
 	}
 }
 
+@media (max-width: 680px) {
+	.curexc-left .application__form-input-wrapper .range-slider__element-wrapper {
+		height: 40px;
+	}
+}
+
 @media (max-width: 575.98px) {
 	.container {
 		.container-inner {
@@ -1030,5 +1047,8 @@ $root-size: 9px;
 	}
 	.curexc-cards .advantages__list-item {
 		width: 88%;
+	}
+	.curexc-total-info .h4 {
+		font-size: 14px;
 	}
 }

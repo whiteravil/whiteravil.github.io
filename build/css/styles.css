@@ -23075,15 +23075,25 @@ textarea.application__form-input {
   font-size: 1.77778rem; }
   .select-location-item:last-child {
     border: none; }
-  .select-location-item .select-location-item-icon svg path {
-    -webkit-transition: all .3s ease;
-    transition: all .3s ease; }
+  .select-location-item .select-location-item-icon svg {
+    width: 2.22222rem;
+    height: 2.22222rem; }
+    .select-location-item .select-location-item-icon svg path {
+      -webkit-transition: all .3s ease;
+      transition: all .3s ease; }
   .select-location-item.active {
     color: #fff;
     background-color: #94C22B;
     border-color: #94C22B; }
     .select-location-item.active .select-location-item-icon svg path {
       fill: #ffffff; }
+  .select-location-item .show-more-info__dropdown {
+    top: -0.55556rem;
+    left: auto;
+    right: calc(100% + 0.55556rem);
+    -webkit-transform: none !important;
+            transform: none !important;
+    padding-top: 0; }
 
 .select-location-item-main {
   margin-bottom: 0.66667rem;
@@ -23575,6 +23585,10 @@ textarea.application__form-input {
     font-size: 14px;
     margin-bottom: 20px; } }
 
+@media (max-width: 680px) {
+  .curexc-left .application__form-input-wrapper .range-slider__element-wrapper {
+    height: 40px; } }
+
 @media (max-width: 575.98px) {
   .container .container-inner {
     padding-left: 0;
@@ -23585,4 +23599,6 @@ textarea.application__form-input {
     margin-left: -30px;
     margin-right: -30px; }
   .curexc-cards .advantages__list-item {
-    width: 88%; } }
+    width: 88%; }
+  .curexc-total-info .h4 {
+    font-size: 14px; } }

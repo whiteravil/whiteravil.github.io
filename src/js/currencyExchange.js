@@ -292,13 +292,15 @@ export default function() {
 			currCoef = 1;
 
 	function getBaseValuteCoef(base) {
-		valuteJSON.forEach(arr => {
-			if ( arr.base === base ) {
-				baseValuteCoef = arr.coef
-			}
-		});
-		let currToValute = $('.curexc-valute-type-to').val();
-		currCoef = baseValuteCoef[currToValute];
+		if ( typeof valuteJSON != 'undefined' ) {
+			valuteJSON.forEach(arr => {
+				if ( arr.base === base ) {
+					baseValuteCoef = arr.coef
+				}
+			});
+			let currToValute = $('.curexc-valute-type-to').val();
+			currCoef = baseValuteCoef[currToValute];
+		}
 	}getBaseValuteCoef(baseValute);
 
 	$('.curexc-valute-type-from').on('change', function() {
