@@ -87,11 +87,25 @@ $root-size: 9px;
 .curexc-steps-nav {
 	.application__steps-new-list-item {
 
+		.application__steps-card:before {
+			transition: all .4s ease;
+		}
+
 		&.active {
 			.application__steps-card-number {
 				background-color: #94c22b;
 				color: #fff;
-				transition: all .4s ease;
+			}
+		}
+
+		&.mute {
+			.application__steps-card-number {
+				background-color: #D9D9D9;
+				border-color: #D9D9D9;
+				color: #fff;
+			}
+			.application__steps-card:before {
+				background-color: #D9D9D9;
 			}
 		}
 
@@ -159,6 +173,7 @@ $root-size: 9px;
 
 .curexc-right {
 	margin-left: rem(65px);
+	margin-top: rem(133px);
 }
 
 .curexc-left {
@@ -1023,6 +1038,12 @@ $root-size: 9px;
 			font-size: 14px;
 			margin-bottom: 20px;
 		}
+	}
+	.curexc-right {
+		margin-top: 0;
+	}
+	.curexc-left .application__form-input-wrapper .range-slider__element-wrapper {
+		height: 40px;
 	}
 }
 

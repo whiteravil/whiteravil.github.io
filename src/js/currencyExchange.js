@@ -356,8 +356,20 @@ export default function() {
 	})
 
 	function nextStep(i) {
-		$('.application__steps-new-list-item').removeClass('active');
-		$('.application__steps-new-list-item').eq(i - 1).addClass('active');
+		console.log(i)
+		$('.curexc-steps-nav .application__steps-new-list-item').each(function(a) {
+			// $('.curexc-steps-nav .application__steps-new-list-item').removeClass('mute active');
+			console.log(a, i-1)
+			if ( a < i - 1 ) {
+				$(this).addClass('mute').removeClass('active')
+			}
+			else if ( a == i - 1 ) {
+				$(this).removeClass('mute').addClass('active');
+			}
+			else {
+				$(this).removeClass('mute').removeClass('active');
+			}
+		});
 		$('.application__form-steps-layer').removeClass('active');
 		$(`.application__form-steps-layer[data-step="${i}"]`).addClass('active');
 		if ( i == 1 ) {
@@ -398,6 +410,14 @@ export default function() {
 	$('.js-curexc-next-step').on('click', function(e) {
 		e.preventDefault();
 		nextStep(3)
+	});
+
+	$('.curexc-cards .advantages__card').on('click', function(e) {
+		e.preventDefault();
+		$('html, body').animate({
+			scrollTop: $('.s-curexc-info').offset().top - 30
+		});
+		$('.curexc-info-nav').find('.js-tabs-nav:nth-child(2)')[0].click()
 	});
 
 }

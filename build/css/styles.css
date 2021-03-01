@@ -22836,11 +22836,21 @@ textarea.application__form-input {
   .s-curexс .choices__list--dropdown {
     z-index: 31; }
 
-.curexc-steps-nav .application__steps-new-list-item.active .application__steps-card-number {
-  background-color: #94c22b;
-  color: #fff;
+.curexc-steps-nav .application__steps-new-list-item .application__steps-card:before {
   -webkit-transition: all .4s ease;
   transition: all .4s ease; }
+
+.curexc-steps-nav .application__steps-new-list-item.active .application__steps-card-number {
+  background-color: #94c22b;
+  color: #fff; }
+
+.curexc-steps-nav .application__steps-new-list-item.mute .application__steps-card-number {
+  background-color: #D9D9D9;
+  border-color: #D9D9D9;
+  color: #fff; }
+
+.curexc-steps-nav .application__steps-new-list-item.mute .application__steps-card:before {
+  background-color: #D9D9D9; }
 
 .curexc-steps-nav .application__steps-new-list-item .application__steps-card-number {
   -webkit-transition: all .4s ease;
@@ -22892,7 +22902,8 @@ textarea.application__form-input {
     overflow: visible; }
 
 .curexc-right {
-  margin-left: 7.22222rem; }
+  margin-left: 7.22222rem;
+  margin-top: 14.77778rem; }
 
 .curexc-left {
   -webkit-box-flex: 1;
@@ -23583,7 +23594,11 @@ textarea.application__form-input {
     font-size: 20px; }
   .modal-info-block p {
     font-size: 14px;
-    margin-bottom: 20px; } }
+    margin-bottom: 20px; }
+  .curexc-right {
+    margin-top: 0; }
+  .curexc-left .application__form-input-wrapper .range-slider__element-wrapper {
+    height: 40px; } }
 
 @media (max-width: 680px) {
   .curexc-left .application__form-input-wrapper .range-slider__element-wrapper {
