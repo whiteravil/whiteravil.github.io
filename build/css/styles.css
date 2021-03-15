@@ -23456,6 +23456,15 @@ textarea.application__form-input {
   .modal-info-block button {
     margin: 0; }
 
+.curexc-cards .curexc-adv-item-for-popup-text {
+  display: none; }
+
+.application__form-mob-text {
+  display: none; }
+
+.curexc-steps-mob-total {
+  display: none; }
+
 @media (max-width: 1199.98px) {
   .curexc-table table tr td:last-child {
     padding-left: 20px;
@@ -23475,12 +23484,20 @@ textarea.application__form-input {
       width: 20px;
       -ms-flex-negative: 0;
           flex-shrink: 0; }
+    .curexc-cards .advantages__list:before {
+      content: '';
+      height: 20px;
+      width: 7px;
+      -ms-flex-negative: 0;
+          flex-shrink: 0; }
   .curexc-cards .advantages__list-item {
     -webkit-transform: none !important;
             transform: none !important;
-    width: 70%;
+    width: 48%;
     -ms-flex-negative: 0;
-        flex-shrink: 0; }
+        flex-shrink: 0;
+    padding-left: 10px;
+    padding-right: 10px; }
   .curexc-cards .advantages__card-more {
     font-size: 14px; }
   .curexc-wrapper {
@@ -23520,17 +23537,17 @@ textarea.application__form-input {
     font-size: 14px;
     margin-bottom: 25px; }
   .curexc-table table tr td:first-child {
-    font-size: 14px;
+    font-size: 13px;
     width: 35%;
     padding-right: 10px; }
   .curexc-table-price {
-    font-size: 14px; }
+    font-size: 13px; }
     .curexc-table-price span {
-      font-size: 18px; }
+      font-size: 16px; }
   .curexc-table table tr:first-child td:last-child:before {
     top: -5px; }
   .curexc-total-info {
-    font-size: 14px; }
+    font-size: 13px; }
     .curexc-total-info .h4 {
       font-size: 16px; }
   .curexc-table table tr:last-child td:last-child:before {
@@ -23598,7 +23615,69 @@ textarea.application__form-input {
   .curexc-right {
     margin-top: 0; }
   .curexc-left .application__form-input-wrapper .range-slider__element-wrapper {
-    height: 40px; } }
+    height: 40px; }
+  .curexc-cards .advantages__list-item .advantages__card-text {
+    display: none; }
+  .curexc-cards .advantages__list-item .advantages__card-btns {
+    display: none; }
+  .curexc-cards .advantages__card {
+    padding: 25px 25px 17px; }
+  .curexc-cards .advantages__card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #6C2F7C;
+    padding-right: 25px; }
+  .curexc-cards .advantages__card {
+    position: relative; }
+    .curexc-cards .advantages__card:after {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      top: 29px;
+      right: 22px;
+      background-image: url(../img/icons/arrow-right-green.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+  .modal__inner--curexc-adv {
+    width: 332px;
+    max-width: 100%; }
+    .modal__inner--curexc-adv .modal__content-wrapper {
+      border-radius: 10px;
+      padding: 36px 34px 34px; }
+  .curexc-adv-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .curexc-adv-info .advantages__card-title {
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 15px; }
+    .curexc-adv-info .advantages__card-more {
+      display: none; }
+    .curexc-adv-info .advantages__card-btns {
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1; }
+    .curexc-adv-info .advantages__card-btns-icon-container {
+      margin: 0 0 30px 0; }
+    .curexc-adv-info .advantages__card-text {
+      display: none; }
+    .curexc-adv-info .curexc-adv-item-for-popup-text {
+      margin-bottom: 0;
+      font-size: 13px;
+      -webkit-box-ordinal-group: 4;
+          -ms-flex-order: 3;
+              order: 3; } }
 
 @media (max-width: 680px) {
   .curexc-left .application__form-input-wrapper .range-slider__element-wrapper {
@@ -23609,11 +23688,164 @@ textarea.application__form-input {
     padding-left: 0;
     padding-right: 0; }
   .curexc-cards .advantages__list {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 13px;
+    padding-right: 13px;
     margin-left: -30px;
-    margin-right: -30px; }
+    margin-right: -30px;
+    padding-bottom: 40px; }
   .curexc-cards .advantages__list-item {
     width: 88%; }
   .curexc-total-info .h4 {
-    font-size: 14px; } }
+    font-size: 16px; }
+  .curexc-cards {
+    margin-bottom: -80px; }
+  .s-curexс {
+    padding-top: 45px; }
+  .curexc-steps-nav .application__steps-new-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-left: -2px;
+    margin-right: -2px; }
+  .curexc-steps-nav .application__steps-card {
+    display: none; }
+  .curexc-steps-nav .application__steps-new-list-item {
+    margin: 0 2px;
+    width: calc(33.33333% - 4px);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    height: 5px;
+    background-color: #F0F0F0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease; }
+    .curexc-steps-nav .application__steps-new-list-item.active {
+      background-color: #6C2F7C; }
+  .curexc-steps-nav .application__steps-new {
+    margin-bottom: 0; }
+  .curexc-form .application__form-progress {
+    display: none; }
+  .curexc-form .application__form {
+    padding-top: 17px; }
+  .curexc-form .application__form-steps-numbers {
+    font-size: 12px; }
+  .curexc-form .application__form-heading {
+    font-size: 26px; }
+  .curexc-form .select-operations-type-label {
+    width: calc(50% - 5px);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    text-align: center; }
+    .curexc-form .select-operations-type-label:last-child {
+      margin-right: 0; }
+    .curexc-form .select-operations-type-label span {
+      background-color: #F5F5F5;
+      border-radius: 4px;
+      font-size: 16px; }
+  .curexc-form .appliaction__form-label-text {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 13px; }
+  .curexc-form .select-location-item {
+    padding: 15px; }
+  .curexc-form .custom-select .choices[data-type*=select-one] .choices__inner {
+    padding-left: 21px; }
+  .curexc-form .selected-location {
+    padding-left: 21px; }
+  .curexc-form .currency__card-calculate-widget-select-wrapper .custom-select .choices[data-type*=select-one] .choices__inner {
+    padding-left: 10px; }
+  .select-location-item-icon {
+    padding-top: 6px; }
+  .application__form-mob-text {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 30px;
+    display: block; }
+  .curexc-steps-mob-total {
+    display: block;
+    margin-bottom: 32px; }
+    .curexc-steps-mob-total .curexc-total {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      padding-left: 25px; }
+      .curexc-steps-mob-total .curexc-total .h3 {
+        margin: 5px 31px 0 0; }
+    .curexc-steps-mob-total .curexc-total-price-value {
+      font-size: 26px;
+      padding-right: 0; }
+    .curexc-steps-mob-total .curexc-total-text {
+      margin-top: 0; }
+  .curexc-right .curexc-total {
+    display: none !important; }
+  .form-text {
+    color: #bababa; }
+  .curexc-footer-checkboxes-item {
+    padding: 0;
+    border: none;
+    margin-bottom: 30px; }
+  .curexc-footer-checkboxes-label span {
+    padding-left: 39px;
+    font-size: 13px;
+    padding-right: 40px; }
+    .curexc-footer-checkboxes-label span a {
+      color: #94C22B; }
+    .curexc-footer-checkboxes-label span:before, .curexc-footer-checkboxes-label span:after {
+      width: 22px;
+      height: 22px; }
+  .curexc-footer-checkboxes {
+    position: relative; }
+    .curexc-footer-checkboxes .show-more-info {
+      position: absolute;
+      top: 0;
+      right: 0; }
+      .curexc-footer-checkboxes .show-more-info svg {
+        width: 20px;
+        height: 20px; }
+  .curexc-footer-btns .application__form-submit {
+    margin-left: 10px; }
+  .curexc-thanks {
+    padding: 19px 26px 26px;
+    border-radius: 10px; }
+    .curexc-thanks .h2 {
+      font-size: 18px;
+      margin-bottom: 8px; }
+    .curexc-thanks p {
+      font-size: 13px; }
+  .curexc-thanks-icon img {
+    width: 24px;
+    margin-bottom: 20px; }
+  .actual-course {
+    padding-top: 0;
+    padding-left: 25px;
+    margin-right: 33px; }
+    .actual-course .h3 {
+      margin-bottom: 20px; }
+  .actual-course-progressbar {
+    margin-bottom: 9px; }
+  .actual-course-timer {
+    margin-bottom: 18px; }
+  .currency__card-rates-table-wrapper {
+    display: block; }
+    .currency__card-rates-table-wrapper * {
+      display: block; }
+    .currency__card-rates-table-wrapper tbody {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      .currency__card-rates-table-wrapper tbody tr {
+        width: 50%;
+        -ms-flex-negative: 0;
+            flex-shrink: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex; }
+        .currency__card-rates-table-wrapper tbody tr td {
+          width: auto !important;
+          padding: 0 !important;
+          font-size: 16px; }
+          .currency__card-rates-table-wrapper tbody tr td:first-child {
+            margin-right: 15px; }
+          .currency__card-rates-table-wrapper tbody tr td .rate svg {
+            width: 11px;
+            height: 11px; } }

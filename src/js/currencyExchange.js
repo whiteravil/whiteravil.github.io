@@ -356,10 +356,7 @@ export default function() {
 	})
 
 	function nextStep(i) {
-		console.log(i)
 		$('.curexc-steps-nav .application__steps-new-list-item').each(function(a) {
-			// $('.curexc-steps-nav .application__steps-new-list-item').removeClass('mute active');
-			console.log(a, i-1)
 			if ( a < i - 1 ) {
 				$(this).addClass('mute').removeClass('active')
 			}
@@ -409,15 +406,29 @@ export default function() {
 
 	$('.js-curexc-next-step').on('click', function(e) {
 		e.preventDefault();
-		nextStep(3)
+		nextStep(3);
 	});
 
 	$('.curexc-cards .advantages__card').on('click', function(e) {
 		e.preventDefault();
+		if ( $(window).width() < 768 ) {
+			let thsContent = $(this).html();
+			$('.curexc-adv-info').html(thsContent);
+			openModal('#mob-curexc-adv');
+		}
+		else {
+			$('html, body').animate({
+				scrollTop: $('.s-curexc-info').offset().top - 30
+			});
+			$('.curexc-info-nav').find('.js-tabs-nav:nth-child(2)')[0].click();
+		}
+		
+	});
+
+	$('.curexc-footer-btns button, .curexc-footer-btns a').on('click', function() {
 		$('html, body').animate({
-			scrollTop: $('.s-curexc-info').offset().top - 30
-		});
-		$('.curexc-info-nav').find('.js-tabs-nav:nth-child(2)')[0].click()
+			scrollTop: $('.s-curexс').offset().top
+		}, 600)
 	});
 
 }

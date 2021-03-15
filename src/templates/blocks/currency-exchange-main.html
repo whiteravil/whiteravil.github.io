@@ -42,6 +42,11 @@
 									<img src="img/currency-exchange/icons/money-exchange.svg" alt="" class="advantages__card-btns-icon" />
 								</div>
 							</div>
+							<div class="curexc-adv-item-for-popup-text">
+								<p>
+									Сумму обеспечительного платежа за фиксацию курса мы вернем после обмена валюты в отделении. Если вы не подойдете в отделение и не заберете деньги, то сумма спишется в качестве комиссии.
+								</p>
+							</div>
 						</a>
 					</li>
 					<li class="advantages__list-item">
@@ -59,6 +64,11 @@
 								<div class="advantages__card-btns-icon-container">
 									<img src="img/currency-exchange/icons/benefits.svg" alt="" class="advantages__card-btns-icon" />
 								</div>
+							</div>
+							<div class="curexc-adv-item-for-popup-text">
+								<p>
+									Сумму обеспечительного платежа за фиксацию курса мы вернем после обмена валюты в отделении. Если вы не подойдете в отделение и не заберете деньги, то сумма спишется в качестве комиссии.
+								</p>
 							</div>
 						</a>
 					</li>
@@ -78,6 +88,11 @@
 									<img src="img/currency-exchange/icons/credit-card.svg" alt="" class="advantages__card-btns-icon" />
 								</div>
 							</div>
+							<div class="curexc-adv-item-for-popup-text">
+								<p>
+									Сумму обеспечительного платежа за фиксацию курса мы вернем после обмена валюты в отделении. Если вы не подойдете в отделение и не заберете деньги, то сумма спишется в качестве комиссии.
+								</p>
+							</div>
 						</a>
 					</li>
 					<li class="advantages__list-item">
@@ -95,6 +110,11 @@
 								<div class="advantages__card-btns-icon-container">
 									<img src="img/currency-exchange/icons/message.svg" alt="" class="advantages__card-btns-icon" />
 								</div>
+							</div>
+							<div class="curexc-adv-item-for-popup-text">
+								<p>
+									Сумму обеспечительного платежа за фиксацию курса мы вернем после обмена валюты в отделении. Если вы не подойдете в отделение и не заберете деньги, то сумма спишется в качестве комиссии.
+								</p>
 							</div>
 						</a>
 					</li>
@@ -158,6 +178,8 @@
 								<div class="application__form-steps-numbers">Шаг 1 из 3</div>
 
 								<h2 class="application__form-heading">Зафиксировать текущий курс</h2>
+
+								<div class="application__form-mob-text">Выберите валюту и сумму для обмена</div>
 
 								<div class="application__form-fields">
 									<div class="application__form-fields-group">
@@ -394,6 +416,8 @@
 
 								<h2 class="application__form-heading">Зафиксировать текущий курс</h2>
 
+								<div class="application__form-mob-text">Перечислите обеспечительный платеж</div>
+
 								<div class="application__form-fields">
 
 									<div class="curexc-table">
@@ -424,7 +448,7 @@
 														<p>Казань, улица Кремлевская, д.2а/6 (на пересечении улиц Кремлевская и Чернышевского)</p>
 														<br>
 														<p>Время работы</p>
-                            <p><span>ПН-ПТ – с 09:00 до 17:00<br>СБ – нерабочий день</span></p>
+														<p><span>ПН-ПТ – с 09:00 до 17:00<br>СБ – нерабочий день</span></p>
 													</div>
 												</td>
 											</tr>
@@ -438,6 +462,30 @@
 												</td>
 											</tr>
 										</table>
+									</div>
+
+									<div class="curexc-steps-mob-total">
+										<div class="curexc-total active">
+											<div class="h3">К оплате</div>
+											<div class="curexc-total-body">
+												<div class="curexc-total-price">
+													<div class="curexc-total-price-value">₽ 89 900</div>
+													<div class="show-more-info">
+														<svg width="14" height="14" aria-hidden="true" class="icon-info">
+															<use xlink:href="#info"></use>
+														</svg>
+														<div class="show-more-info__dropdown">
+															<div class="show-more-info__dropdown-inner">
+																<p>
+																	Текст выпадашки
+																</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="curexc-total-text">Комиссия 200 рублей</div>
+											</div>
+										</div>
 									</div>
 
 									<div class="application__form-fields-group">
@@ -488,6 +536,8 @@
 								<div class="application__form-steps-numbers">Шаг 3 из 3</div>
 
 								<h2 class="application__form-heading">Ждем Вас в отделении</h2>
+
+								<div class="application__form-mob-text">Придите в отделение банка для завершения операции</div>
 
 								<div class="application__form-fields">
 
@@ -1258,5 +1308,37 @@
 
 		</div>
 
+	</div>
+</section>
+
+<section class="callback">
+	<div class="container">
+		<div class="callback__row">
+			<h2 class="callback__heading">
+				Остались вопросы?
+			</h2>
+			<form action="/" method="POST" class="callback__form" data-need-validation>
+				<div class="callback__form-main-wrapper">
+					<div class="callback__input-wrapper">
+						<input type="tel" name="tel" class="callback__input js-phone-input" required data-parsley-phone placeholder="+7">
+					</div>
+					<button type="submit" class="callback__submit-btn">
+						Обратный звонок
+					</button>
+				</div>
+
+				<label class="open-account__privacy-policy-checkbox">
+					<input type="checkbox" name="policy" class="open-account__privacy-policy-checkbox-input" checked="" required="">
+					<span class="open-account__privacy-policy-checkbox-mark open-account__privacy-policy-checkbox-mark--white">
+						<svg width="16" height="16" aria-hidden="true" class="icon-checkmark">
+							<use xlink:href="#checkmark"></use>
+						</svg>
+					</span>
+					<span class="open-account__privacy-policy-checkbox-text">
+						Нажимая кнопку "Обратный звонок", я соглашаюсь с условиями обработки персональных данных
+					</span>
+				</label>
+			</form>
+		</div>
 	</div>
 </section>
