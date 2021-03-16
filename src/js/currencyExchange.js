@@ -46,17 +46,17 @@ export default function() {
 		initTimer()
 	}
 
-	$('.select-location-group').each(function() {
-		let ths = $(this);
-		ths.find('.selected-location').on('click', function() {
-			ths.toggleClass('opened')
-		});
-		ths.find('.select-location-item').on('click', function() {
-			ths.find('.select-location-item').removeClass('active');
-			$(this).addClass('active');
-			ths.find('.selected-location').removeClass('muted').text($(this).find('.select-location-item-main').text());
-			ths.removeClass('opened')
-		});
+	$(document).on('click', '.selected-location', function() {
+		let ths = $(document).find('.select-location-group');
+		ths.toggleClass('opened');
+	});
+
+	$(document).on('click', '.select-location-item', function() {
+		let ths = $(document).find('.select-location-group');
+		ths.find('.select-location-item').removeClass('active');
+		$(this).addClass('active');
+		ths.find('.selected-location').removeClass('muted').text($(this).find('.select-location-item-main').text());
+		ths.removeClass('opened')
 	});
 
 	$(document).on('click', function(e) {
@@ -67,18 +67,58 @@ export default function() {
 
 	function officesMapInit() {
 
+		let citiesArr;
+		let departmentsArr;
+
+		let citiesProm = new Promise(resolve => {
+			$.ajax({
+				type: 'get',
+				url: `../jsons/city.json`,
+				dataType: 'json',
+				success: function (res) {
+					citiesArr = res;
+					resolve();
+				}
+			});
+		});
+
+		let departmentsProm = new Promise(resolve => {
+			$.ajax({
+				type: 'get',
+				url: `../jsons/departments.json`,
+				dataType: 'json',
+				success: function (res) {
+					departmentsArr = res;
+					resolve();
+				}
+			});
+		});
+
+		Promise.all([citiesProm, departmentsProm]).then(res => {
+			officesMapInitSuccess(departmentsArr);
+		})
+
+	}
+
+	function officesMapInitSuccess(departmentsArr) {
+
 		let officesMap = new ymaps.Map('offices-map', {
 			center: [55.796554, 49.104752],
 			zoom: 12,
 			controls: []
 		});
 
-		let officesList = [
-			{
-				type: 'offices',
-				cash: true,
-				allDay: false,
-				coords: [55.831082, 49.079644],
+		let officesList = [];
+
+		$('.select-location-drop').html('');
+
+		for ( let key in departmentsArr ) {
+
+			let departmentsArrItem = departmentsArr[key];
+
+			officesList.push({
+				id: departmentsArrItem.id,
+				coords: [departmentsArrItem.geolocation.lat, departmentsArrItem.geolocation.lng],
 				content: [
 					'<div class="offices__balloon-inner">',
 						'<button type="button" class="offices__balloon-close">',
@@ -86,131 +126,52 @@ export default function() {
 						'</button>',
 						'<div class="offices__balloon-inner-row">',
 							'<h5>Адрес</h5>',
-							'<p><strong>Казань, улица Декабристов, д.183</strong></p>',
-							'<p>ДО "Декабристов"</p>',
+							`<p><strong>${departmentsArrItem.address}</strong></p>`,
+							`<p>${departmentsArrItem.addrdesc}</p>`,
 						'</div>',
 						'<div class="offices__balloon-inner-row">',
 							'<h5>Время работы</h5>',
 							'<table>',
 								'<tr>',
-									'<th><strong>Понедельник - пятница</strong></th>',
-									'<td>09:00 до 19:00</td>',
+									`<th><strong>${departmentsArrItem.schedule[0].title}</strong></th>`,
+									`<td>${departmentsArrItem.schedule[0].times}</td>`,
 								'</tr>',
 								'<tr>',
-									'<th><strong>Суббота</strong></th>',
-									'<td>10:00 до 15:00</td>',
+									`<th><strong>${departmentsArrItem.schedule[1].title}</strong></th>`,
+									`<td>${departmentsArrItem.schedule[1].times}</td>`,
 								'</tr>',
 							'</table>',
 						'</div>',
 						'<div class="offices__balloon-select">',
-							'<button type="button" class="offices__balloon-select-btn">Выбрать</button>',
+							`<button type="button" class="offices__balloon-select-btn" data-id="${departmentsArrItem.id}">Выбрать</button>`,
 						'</div>',
 					'</div>'
 				].join('')
-			},
-			{
-				type: 'offices',
-				cash: true,
-				allDay: true,
-				coords: [55.815159, 49.101276],
-				content: [
-					'<div class="offices__balloon-inner">',
-						'<button type="button" class="offices__balloon-close">',
-							'<svg width="20" height="20" aria-hidden="true" class="icon-cross"><use xlink:href="#cross"/></svg>',
-						'</button>',
-						'<div class="offices__balloon-inner-row">',
-							'<h5>Адрес</h5>',
-							'<p><strong>Казань, улица Декабристов, д.183</strong></p>',
-							'<p>ДО "Декабристов"</p>',
-						'</div>',
-						'<div class="offices__balloon-inner-row">',
-							'<h5>Время работы</h5>',
-							'<table>',
-								'<tr>',
-									'<th><strong>Понедельник - пятница</strong></th>',
-									'<td>09:00 до 19:00</td>',
-								'</tr>',
-								'<tr>',
-									'<th><strong>Суббота</strong></th>',
-									'<td>10:00 до 15:00</td>',
-								'</tr>',
-							'</table>',
-						'</div>',
-						'<div class="offices__balloon-select">',
-							'<button type="button" class="offices__balloon-select-btn">Выбрать</button>',
-						'</div>',
-					'</div>'
-				].join('')
-			},
-			{
-				type: 'offices',
-				cash: false,
-				allDay: true,
-				coords: [55.812957, 49.183735],
-				content: [
-					'<div class="offices__balloon-inner">',
-						'<button type="button" class="offices__balloon-close">',
-							'<svg width="20" height="20" aria-hidden="true" class="icon-cross"><use xlink:href="#cross"/></svg>',
-						'</button>',
-						'<div class="offices__balloon-inner-row">',
-							'<h5>Адрес</h5>',
-							'<p><strong>Казань, улица Декабристов, д.183</strong></p>',
-							'<p>ДО "Декабристов"</p>',
-						'</div>',
-						'<div class="offices__balloon-inner-row">',
-							'<h5>Время работы</h5>',
-							'<table>',
-								'<tr>',
-									'<th><strong>Понедельник - пятница</strong></th>',
-									'<td>09:00 до 19:00</td>',
-								'</tr>',
-								'<tr>',
-									'<th><strong>Суббота</strong></th>',
-									'<td>10:00 до 15:00</td>',
-								'</tr>',
-							'</table>',
-						'</div>',
-						'<div class="offices__balloon-select">',
-							'<button type="button" class="offices__balloon-select-btn">Выбрать</button>',
-						'</div>',
-					'</div>'
-				].join('')
-			},
-			{
-				type: 'offices',
-				cash: false,
-				allDay: true,
-				coords: [55.79474, 49.114071],
-				content: [
-					'<div class="offices__balloon-inner">',
-						'<button type="button" class="offices__balloon-close">',
-							'<svg width="20" height="20" aria-hidden="true" class="icon-cross"><use xlink:href="#cross"/></svg>',
-						'</button>',
-						'<div class="offices__balloon-inner-row">',
-							'<h5>Адрес</h5>',
-							'<p><strong>Казань, улица Декабристов, д.183</strong></p>',
-							'<p>ДО "Декабристов"</p>',
-						'</div>',
-						'<div class="offices__balloon-inner-row">',
-							'<h5>Время работы</h5>',
-							'<table>',
-								'<tr>',
-									'<th><strong>Понедельник - пятница</strong></th>',
-									'<td>09:00 до 19:00</td>',
-								'</tr>',
-								'<tr>',
-									'<th><strong>Суббота</strong></th>',
-									'<td>10:00 до 15:00</td>',
-								'</tr>',
-							'</table>',
-						'</div>',
-						'<div class="offices__balloon-select">',
-							'<button type="button" class="offices__balloon-select-btn">Выбрать</button>',
-						'</div>',
-					'</div>'
-				].join('')
-			},
-			];
+			});
+
+			$('.select-location-drop').append([
+				`<div class="select-location-item selected" data-id="${departmentsArrItem.id}">`,
+				`<div class="select-location-item-main">${departmentsArrItem.address}</div>`,
+				`<div class="select-location-item-second">${departmentsArrItem.addrdesc}</div>`,
+				'<div class="select-location-item-icon">',
+				'<div class="show-more-info">',
+				'<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">',
+				'<path d="M10 0C4.486 0 0 4.486 0 10C0 15.514 4.486 20 10 20C15.514 20 20 15.514 20 10C20 4.486 15.514 0 10 0ZM10 18C5.589 18 2 14.411 2 10C2 5.589 5.589 2 10 2C14.411 2 18 5.589 18 10C18 14.411 14.411 18 10 18Z" fill="#D9D9D9"/>',
+				'<path d="M11 5H9V10.414L12.293 13.707L13.707 12.293L11 9.586V5Z" fill="#D9D9D9"/>',
+				'</svg>',
+				'<div class="show-more-info__dropdown">',
+				'<div class="show-more-info__dropdown-inner">',
+				'<p>',
+				`Время работы:<br>${departmentsArrItem.schedule[0].title} - ${departmentsArrItem.schedule[0].times}<br>${departmentsArrItem.schedule[1].title} - ${departmentsArrItem.schedule[1].times}`,
+				'</p>',
+				'</div>',
+				'</div>',
+				'</div>',
+				'</div>',
+				'</div>'
+			].join(''));
+
+		}
 
 		let objectManagerList = new ymaps.ObjectManager({
 			clusterize: false,
@@ -221,7 +182,8 @@ export default function() {
 		});
     officesMap.geoObjects.add(objectManagerList);
 
-		officesList.forEach(function(item) {
+		officesList.forEach(item => {
+
 			let mapAddOBJ = {
 				id: item.coords.join('-'),
 				type: 'Feature',
@@ -236,13 +198,13 @@ export default function() {
           iconImageOffset: window.matchMedia('(min-width: 769px)').matches ? [-12.5, -37] : [-25, -74]
 				}),
 				properties: {
-					type: item.type,
-					allDay: item.allDay,
-					cash: item.cash,
+					id: item.id,
 					balloonContent: item.content
 				}
 			};
+
 			objectManagerList.add(mapAddOBJ);
+
 		});
 
 		let balloonContainerMain = $('.offices-map-ballon');
@@ -262,6 +224,13 @@ export default function() {
 				});
 				balloonContainerMain.find('.offices__balloon-select-btn').on('click', function(a) {
 					a.preventDefault();
+					let thsId = $(this).data('id');
+					let selectLocGroup = $(document).find('.select-location-group');
+					selectLocGroup.find('.select-location-item').removeClass('active');
+					$(document).find(`.select-location-item[data-id=${thsId}]`).addClass('active');
+					selectLocGroup.find('.selected-location').removeClass('muted').text($(document).find(`.select-location-item[data-id=${thsId}]`).find('.select-location-item-main').text());
+					selectLocGroup.removeClass('opened');
+					
 					if ( prevObject != false ) {
 						objectManagerList.objects.setObjectOptions(prevObject, {
 							iconImageHref: 'img/map-pins/office.svg'
@@ -276,6 +245,19 @@ export default function() {
 					officesMap.panTo([parseFloat(objectId.split('-')[0]), parseFloat(objectId.split('-')[1])]);
 				});
 			}
+		});
+
+		$(document).on('click', '.select-location-item', function() {
+			let thsId = $(this).data('id');
+
+			objectManagerList.objects.each(function(e) {
+
+				if ( e.prorerties.id === parseInt(thsId) ) {
+					let thsId = objectManagerList.objects.getById(e)
+				}
+
+			})
+
 		});
 
 	}
