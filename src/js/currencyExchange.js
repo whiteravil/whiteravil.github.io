@@ -231,11 +231,11 @@ export default function() {
 					selectLocGroup.find('.selected-location').removeClass('muted').text($(document).find(`.select-location-item[data-id=${thsId}]`).find('.select-location-item-main').text());
 					selectLocGroup.removeClass('opened');
 					
-					if ( prevObject != false ) {
-						objectManagerList.objects.setObjectOptions(prevObject, {
+					objectManagerList.objects.each(function(item) {
+						objectManagerList.objects.setObjectOptions(item.id, {
 							iconImageHref: 'img/map-pins/office.svg'
-						});
-					}
+						})
+					});
 					objectManagerList.objects.setObjectOptions(e.get('objectId'), {
 						iconImageHref: 'img/map-pins/office-active.svg'
 					});
@@ -243,6 +243,7 @@ export default function() {
 					balloonContainerMain.html('');
 					let currLoc = objectId.split('-');
 					officesMap.panTo([parseFloat(objectId.split('-')[0]), parseFloat(objectId.split('-')[1])]);
+					eventDev(thsId);
 				});
 			}
 		});
@@ -250,13 +251,23 @@ export default function() {
 		$(document).on('click', '.select-location-item', function() {
 			let thsId = $(this).data('id');
 
-			objectManagerList.objects.each(function(e) {
-
-				if ( e.prorerties.id === parseInt(thsId) ) {
-					let thsId = objectManagerList.objects.getById(e)
+			objectManagerList.objects.each(function(item) {
+				let coord = item.id.split('-');
+				console.log(coord)
+				if ( item.properties.id === parseInt(thsId) ) {
+					objectManagerList.objects.setObjectOptions(item.id, {
+						iconImageHref: 'img/map-pins/office-active.svg'
+					});
+					officesMap.panTo([parseFloat(coord[0]), parseFloat(coord[1])]);
 				}
+				else {
+					objectManagerList.objects.setObjectOptions(item.id, {
+						iconImageHref: 'img/map-pins/office.svg'
+					})
+				}
+			});
 
-			})
+			eventDev(thsId);
 
 		});
 
@@ -286,16 +297,20 @@ export default function() {
 	}getBaseValuteCoef(baseValute);
 
 	$('.curexc-valute-type-from').on('change', function() {
-		getBaseValuteCoef($(this).val());
+		let thsVal = $(this).val();
+		getBaseValuteCoef(thsVal);
 		setTimeout(() => {
-			$('.curexc-value-from').trigger('change')
+			$('.curexc-value-from').trigger('change');
+			eventCurrency(thsVal)
 		}, 10)
 	});
 
 	$('.curexc-valute-type-to').on('change', function() {
-		currCoef = baseValuteCoef[$(this).val()];
+		let thsVal = $(this).val();
+		currCoef = baseValuteCoef[thsVal];
 		setTimeout(() => {
 			$('.curexc-value-from').trigger('change')
+			eventCurrency(thsVal)
 		}, 10)
 	});
 
@@ -412,5 +427,33 @@ export default function() {
 			scrollTop: $('.s-curexс').offset().top
 		}, 600)
 	});
+
+	$('.js-custom-select').on('change', function() {
+		let thsId = $(this).val();
+		eventCity(thsId)
+	});
+
+	$('input[name=operations-type]').on('change', function() {
+		let currVal = $('input[name=operations-type]:checked').val();
+		eventTypeOrder(currVal);
+	});
+
+	// СОБЫТИЯ
+	// выбор города
+	function eventCity(id) {
+		console.log(id)
+	}
+	// выбор подразделения
+	function eventDev(id) {
+		console.log(id)
+	}
+	// изменение валюты
+	function eventCurrency(code) {
+		console.log(code)
+	}
+	// выбор Покупка/Продажа
+	function eventTypeOrder(type) {
+		console.log(type)
+	}
 
 }
