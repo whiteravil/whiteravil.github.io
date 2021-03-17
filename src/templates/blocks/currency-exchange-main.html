@@ -328,84 +328,88 @@
 										]
 									</script>
 
-									<div class="application__form-fields-group">
-										<div class="application__form-label">
-											<div class="appliaction__form-label-text">
-												Я покупаю
-											</div>
-											<div class="application__form-input-wrapper">
-												<div class="curexc-converter with-icon">
-													<div class="currency__card-calculate-widget-item currency__card-calculate-widget-item--top">
-														<div class="currency__card-calculate-widget-range-wrapper">
-															<div class="range-slider range-slider--no-right-radius js-range-slider">
-																<input type="range" name="first-currency-amount" step="0" min="100" max="10000" class="range-slider__input curexc-value-from" value="1000" />
-																<div class="range-slider__element-wrapper">
-																	<input type="tel" class="range-slider__amount js-only-numeric" value="14000" />
-																	<div class="range-slider__element"></div>
-																</div>
-															</div>
-														</div>
-														<div class="currency__card-calculate-widget-select-wrapper">
-															<div class="custom-select custom-select--no-left-radius">
-																<select name="first-currency-name" class="custom-select__input js-custom-select curexc-valute-type-from">
-																	<option value="RUB">RUB</option>
-																	<option value="USD">USD</option>
-																	<option value="EUR" selected>EUR</option>
-																</select>
-															</div>
-														</div>
-													</div>
-													<div class="range-slider__min-max">
-														<div class="range-slider__min">
-															100
-														</div>
-														<div class="range-slider__max">
-															10 000
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
+									<div class="curexc-buy-sell-group">
 
-									<div class="application__form-fields-group">
-										<div class="application__form-label">
-											<div class="appliaction__form-label-text">
-												Я заплачу
-											</div>
-											<div class="application__form-input-wrapper">
-												<div class="curexc-converter">
-													<div class="currency__card-calculate-widget-item currency__card-calculate-widget-item--top">
-														<div class="currency__card-calculate-widget-range-wrapper">
-															<div class="range-slider range-slider--no-right-radius js-range-slider">
-																<input type="range" name="first-currency-amount" step="0" min="100" max="1000000" class="range-slider__input curexc-value-to" value="89390" />
-																<div class="range-slider__element-wrapper">
-																	<input type="tel" class="range-slider__amount js-only-numeric" value="14000" />
-																	<div class="range-slider__element"></div>
+										<div class="application__form-fields-group">
+											<div class="application__form-label">
+												<div class="appliaction__form-label-text" data-rotate-text="Я получу">
+													<span>Я покупаю</span>
+												</div>
+												<div class="application__form-input-wrapper">
+													<div class="curexc-converter with-icon">
+														<div class="currency__card-calculate-widget-item currency__card-calculate-widget-item--top">
+															<div class="currency__card-calculate-widget-range-wrapper">
+																<div class="range-slider range-slider--no-right-radius js-range-slider">
+																	<input type="range" name="first-currency-amount" step="0" min="100" max="10000" class="range-slider__input curexc-value-from" value="1000" />
+																	<div class="range-slider__element-wrapper">
+																		<input type="tel" class="range-slider__amount js-only-numeric" value="14000" />
+																		<div class="range-slider__element"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="currency__card-calculate-widget-select-wrapper">
+																<div class="custom-select custom-select--no-left-radius">
+																	<select name="first-currency-name" class="custom-select__input js-custom-select curexc-valute-type-from">
+																		<option value="RUB">RUB</option>
+																		<option value="USD">USD</option>
+																		<option value="EUR" selected>EUR</option>
+																	</select>
 																</div>
 															</div>
 														</div>
-														<div class="currency__card-calculate-widget-select-wrapper">
-															<div class="custom-select custom-select--no-left-radius">
-																<select name="first-currency-name" class="custom-select__input js-custom-select curexc-valute-type-to">
-																	<option value="RUB" selected>RUB</option>
-																	<option value="USD">USD</option>
-																	<option value="EUR">EUR</option>
-																</select>
+														<div class="range-slider__min-max">
+															<div class="range-slider__min">
+																100
 															</div>
-														</div>
-													</div>
-													<div class="range-slider__min-max">
-														<div class="range-slider__min">
-															100
-														</div>
-														<div class="range-slider__max">
-															1 000 000
+															<div class="range-slider__max">
+																10 000
+															</div>
 														</div>
 													</div>
 												</div>
 											</div>
 										</div>
+
+										<div class="application__form-fields-group">
+											<div class="application__form-label">
+												<div class="appliaction__form-label-text" data-rotate-text="Я продаю">
+													<span>Я заплачу</span>
+												</div>
+												<div class="application__form-input-wrapper">
+													<div class="curexc-converter">
+														<div class="currency__card-calculate-widget-item currency__card-calculate-widget-item--top">
+															<div class="currency__card-calculate-widget-range-wrapper">
+																<div class="range-slider range-slider--no-right-radius js-range-slider">
+																	<input type="range" name="first-currency-amount" step="0" min="100" max="1000000" class="range-slider__input curexc-value-to" value="89390" />
+																	<div class="range-slider__element-wrapper">
+																		<input type="tel" class="range-slider__amount js-only-numeric" value="14000" />
+																		<div class="range-slider__element"></div>
+																	</div>
+																</div>
+															</div>
+															<div class="currency__card-calculate-widget-select-wrapper">
+																<div class="custom-select custom-select--no-left-radius">
+																	<select name="first-currency-name" class="custom-select__input js-custom-select curexc-valute-type-to">
+																		<option value="RUB" selected>RUB</option>
+																		<option value="USD">USD</option>
+																		<option value="EUR">EUR</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														<div class="range-slider__min-max">
+															<div class="range-slider__min">
+																100
+															</div>
+															<div class="range-slider__max">
+																1 000 000
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
 									</div>
 
 								</div>

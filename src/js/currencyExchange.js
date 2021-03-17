@@ -436,6 +436,12 @@ export default function() {
 	$('input[name=operations-type]').on('change', function() {
 		let currVal = $('input[name=operations-type]:checked').val();
 		eventTypeOrder(currVal);
+		if ( currVal == '1' ) {
+			$('.curexc-buy-sell-group').addClass('rotate')
+		}
+		else {
+			$('.curexc-buy-sell-group').removeClass('rotate')
+		}
 	});
 
 	// СОБЫТИЯ

@@ -863,6 +863,43 @@ $root-size: 9px;
 	display: none;
 }
 
+.curexc-buy-sell-group {
+	display: flex;
+	flex-direction: column;
+	&.rotate {
+		flex-direction: column-reverse;
+		.appliaction__form-label-text {
+			span {
+				display: none;
+			}
+			&:before {
+				content: attr(data-rotate-text);
+			}
+		}
+		.curexc-converter {
+			position: relative;
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: -#{rem(6px)};
+				left: 50%;
+				transform: translateX(-50%);
+				width: rem(13.5px);
+				height: rem(13.5px);
+				background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.58626 -5.20766e-07L6.75 5.1525L11.9138 -6.93372e-08L13.5 1.58625L6.75 8.33625L5.65271e-06 1.58625L1.58626 -5.20766e-07Z' fill='%23DCDCDC'/%3e%3c/svg%3e");
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+			&.with-icon {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
 @media (max-width: 1199.98px) {
 	.curexc-table table tr td:last-child {
 		padding-left: 20px;

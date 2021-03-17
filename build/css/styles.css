@@ -23465,6 +23465,41 @@ textarea.application__form-input {
 .curexc-steps-mob-total {
   display: none; }
 
+.curexc-buy-sell-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .curexc-buy-sell-group.rotate {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse; }
+    .curexc-buy-sell-group.rotate .appliaction__form-label-text span {
+      display: none; }
+    .curexc-buy-sell-group.rotate .appliaction__form-label-text:before {
+      content: attr(data-rotate-text); }
+    .curexc-buy-sell-group.rotate .curexc-converter {
+      position: relative; }
+      .curexc-buy-sell-group.rotate .curexc-converter:after {
+        content: '';
+        position: absolute;
+        bottom: -0.66667rem;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+                transform: translateX(-50%);
+        width: 1.5rem;
+        height: 1.5rem;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='14' height='9' viewBox='0 0 14 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1.58626 -5.20766e-07L6.75 5.1525L11.9138 -6.93372e-08L13.5 1.58625L6.75 8.33625L5.65271e-06 1.58625L1.58626 -5.20766e-07Z' fill='%23DCDCDC'/%3e%3c/svg%3e");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center; }
+      .curexc-buy-sell-group.rotate .curexc-converter.with-icon:after {
+        display: none; }
+
 @media (max-width: 1199.98px) {
   .curexc-table table tr td:last-child {
     padding-left: 20px;
