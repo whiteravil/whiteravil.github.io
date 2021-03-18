@@ -23041,6 +23041,9 @@ textarea.application__form-input {
       -ms-user-select: none;
           user-select: none;
   cursor: pointer; }
+  .selected-location.danger {
+    background: #ffe4e4 !important;
+    color: #ff3636 !important; }
   .selected-location:after {
     content: '';
     position: absolute;
@@ -23222,6 +23225,10 @@ textarea.application__form-input {
     color: #717171; }
     .curexc-total-info p span {
       color: #000; }
+
+.application__form-input.danger {
+  background: #ffe4e4 !important;
+  color: #ff3636 !important; }
 
 .application__form-input.bold {
   font-weight: bold; }
@@ -23441,6 +23448,18 @@ textarea.application__form-input {
 .curexc-next.hide {
   display: none; }
 
+.curexc-next[disabled] {
+  background-color: #ccc;
+  color: #fff;
+  cursor: default;
+  opacity: 0.7; }
+
+.modal__application-code-form-btn-submit[disabled] {
+  background-color: #ccc;
+  color: #fff;
+  cursor: default;
+  opacity: 0.7; }
+
 .modal-info-block {
   text-align: center; }
   .modal-info-block .h3 {
@@ -23499,6 +23518,19 @@ textarea.application__form-input {
         background-position: center; }
       .curexc-buy-sell-group.rotate .curexc-converter.with-icon:after {
         display: none; }
+
+#curexc-phone-form.danger .modal__application-code-form-input {
+  border-color: red; }
+
+#curexc-phone-form.danger .danger-text {
+  display: block; }
+
+.danger-text {
+  font-size: 12px;
+  color: red;
+  margin: 10px 0;
+  text-align: left;
+  display: none; }
 
 @media (max-width: 1199.98px) {
   .curexc-table table tr td:last-child {

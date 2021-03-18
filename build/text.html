@@ -2639,7 +2639,7 @@
                 <h3 class="modal__application-code-heading">
                     Код подтверждения
                 </h3>
-                <form action="/" method="POST" class="modal__application-code-form js-application-code-form">
+                <form action="/" method="POST" class="modal__application-code-form js-application-code-form danger" id="curexc-phone-form">
                     <div class="modal__application-code-form-row js-enter-code">
                         <div class="modal__application-code-form-col">
                             <input type="tel" class="modal__application-code-form-input" />
@@ -2660,6 +2660,7 @@
                             <input type="tel" class="modal__application-code-form-input" />
                         </div>
                     </div>
+                    <p class="danger-text">Неправильный код</p>
                     <div class="modal__application-code-form-message">
                         Мы отправили код на номер +7 987 654 32 10
                     </div>
@@ -2673,7 +2674,7 @@
                         Вводя код, я подтверждаю, что ознакомлен и подписываю <a href="#">соглашение</a> о порядке использоания электронной подписии согласен на <a href="#">обработку персональных данных</a>
                     </div>
                     <div class="modal__application-code-form-btns">
-                        <button type="submit" class="modal__application-code-form-btn-submit js-curexc-next-step js-close-modal">Отправить</button>
+                        <button type="submit" class="modal__application-code-form-btn-submit js-curexc-next-step js-close-modal" disabled>Отправить</button>
                         <a href="#" class="modal__application-code-form-btn-close js-close-modal">
                             Назад
                         </a>

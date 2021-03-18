@@ -1298,7 +1298,7 @@
 											</div>
 											<div class="application__form-input-wrapper">
 												<div class="select-location-group">
-													<div class="selected-location muted">Выберите отделение</div>
+													<div class="selected-location muted danger">Выберите отделение</div>
 													<div class="select-location-drop">
 														<div class="select-location-item selected">
 															<div class="select-location-item-main">Казань, улица Кремлевская, д.2а/6</div>
@@ -1571,7 +1571,7 @@
 											</div>
 											<div class="application__form-input-wrapper">
 												<div class="input-group">
-													<input type="tel" class="application__form-input js-phone-input" placeholder="+7">
+													<input type="tel" class="application__form-input js-phone-input" id="curexc-phone-input" placeholder="+7">
 												</div>
 												<div class="form-text">На этот номер придет СМС с кодом подтверждения</div>
 											</div>
@@ -1828,7 +1828,7 @@
 								К шагу 1
 							</span>
 						</button>
-						<button type="button" class="application__form-submit curexc-next">
+						<button type="button" class="application__form-submit curexc-next" disabled>
 							<span class="application__form-submit-content">
 								Далее
 								<svg width="16" height="16" aria-hidden="true" class="icon-arrow-right">
@@ -3164,7 +3164,7 @@
                 <h3 class="modal__application-code-heading">
                     Код подтверждения
                 </h3>
-                <form action="/" method="POST" class="modal__application-code-form js-application-code-form">
+                <form action="/" method="POST" class="modal__application-code-form js-application-code-form danger" id="curexc-phone-form">
                     <div class="modal__application-code-form-row js-enter-code">
                         <div class="modal__application-code-form-col">
                             <input type="tel" class="modal__application-code-form-input" />
@@ -3185,6 +3185,7 @@
                             <input type="tel" class="modal__application-code-form-input" />
                         </div>
                     </div>
+                    <p class="danger-text">Неправильный код</p>
                     <div class="modal__application-code-form-message">
                         Мы отправили код на номер +7 987 654 32 10
                     </div>
@@ -3198,7 +3199,7 @@
                         Вводя код, я подтверждаю, что ознакомлен и подписываю <a href="#">соглашение</a> о порядке использоания электронной подписии согласен на <a href="#">обработку персональных данных</a>
                     </div>
                     <div class="modal__application-code-form-btns">
-                        <button type="submit" class="modal__application-code-form-btn-submit js-curexc-next-step js-close-modal">Отправить</button>
+                        <button type="submit" class="modal__application-code-form-btn-submit js-curexc-next-step js-close-modal" disabled>Отправить</button>
                         <a href="#" class="modal__application-code-form-btn-close js-close-modal">
                             Назад
                         </a>

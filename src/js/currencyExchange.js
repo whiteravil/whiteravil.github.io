@@ -56,7 +56,10 @@ export default function() {
 		ths.find('.select-location-item').removeClass('active');
 		$(this).addClass('active');
 		ths.find('.selected-location').removeClass('muted').text($(this).find('.select-location-item-main').text());
-		ths.removeClass('opened')
+		ths.removeClass('opened');
+		//Правка
+		$('.curexc-next').prop('disabled', false);
+		$('.selected-location').removeClass('danger');
 	});
 
 	$(document).on('click', function(e) {
@@ -244,6 +247,9 @@ export default function() {
 					let currLoc = objectId.split('-');
 					officesMap.panTo([parseFloat(objectId.split('-')[0]), parseFloat(objectId.split('-')[1])]);
 					eventDev(thsId);
+					//Правика
+					$('.curexc-next').prop('disabled', false);
+					$('.selected-location').removeClass('danger');
 				});
 			}
 		});
@@ -331,12 +337,8 @@ export default function() {
 		e.preventDefault();
 		let act = $('.application__form-steps-layer.active'),
 				step = parseInt(act.data('step'));
-		if ( $(this).hasClass('check-phone') ) {
-			openModal('#application-code-2')
-		}
-		else {
-			nextStep(step + 1);
-		}
+		nextStep(step + 1);
+		$('.curexc-next').prop('disabled', true);
 	});
 
 	$('.curexc-prev').on('click', function(e) {
@@ -403,7 +405,7 @@ export default function() {
 
 	$('.js-curexc-next-step').on('click', function(e) {
 		e.preventDefault();
-		nextStep(3);
+		// nextStep(3);
 	});
 
 	$('.curexc-cards .advantages__card').on('click', function(e) {
@@ -442,6 +444,33 @@ export default function() {
 		else {
 			$('.curexc-buy-sell-group').removeClass('rotate')
 		}
+	});
+
+	//Правки
+	$('#curexc-phone-input').on('complete', function() {
+		openModal('#application-code-2');
+	});
+
+	let phoneFormCodeInputs = $('#curexc-phone-form .modal__application-code-form-input');
+
+	phoneFormCodeInputs.on('input', function() {
+		let phoneCodeInputsFill = true;
+		phoneFormCodeInputs.each(function() {
+			if ( $(this).val().trim().length == 0 ) {
+				phoneCodeInputsFill = false
+			}
+		});
+		phoneCodeInputsFill ? $('.js-curexc-next-step').prop('disabled', false) : $('.js-curexc-next-step').prop('disabled', true);
+	});
+
+	$('.curexc-footer-checkboxes-label input').on('change', function() {
+		let allCheck = true;
+		$('.curexc-footer-checkboxes-label input').each(function() {
+			if ( !$(this).is(':checked') ) {
+				allCheck = false
+			}
+		});
+		allCheck ? $('.curexc-next').prop('disabled', false) : $('.curexc-next').prop('disabled', true);
 	});
 
 	// СОБЫТИЯ
