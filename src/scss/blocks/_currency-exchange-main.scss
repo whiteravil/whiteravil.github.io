@@ -287,12 +287,14 @@ $root-size: 9px;
 		background-color: transparent;
 		padding: 0;
 		margin: 0 rem(34px) 0 0;
-		color: #aaa;
+		color: #aaa !important;
 		font-size: rem(30px);
 		font-weight: 500;
+		background: none !important;
 
-		&.active {
-			color: #000;
+		&.active,
+		&:hover {
+			color: #000 !important;
 		}
 	}
 
@@ -313,7 +315,7 @@ $root-size: 9px;
 		padding-left: rem(26px);
 	}
 	.choices[data-type*=select-one]:after {
-		right: rem(20px);
+		right: rem(20px) !important;
 	}
 }
 

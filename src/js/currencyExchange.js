@@ -323,14 +323,17 @@ export default function() {
 	$('.curexc-value-from').on('change', function() {
 		setTimeout(() => {
 			let currVal = (parseFloat($(this).val()) * currCoef).toFixed(0);
+			
 			$('.curexc-value-to + .range-slider__element-wrapper .range-slider__amount').val(currVal);
+			$('.curexc-value-to').val(currVal);
 			// $('.curexc-value-to + .range-slider__element-wrapper .range-slider__element')[0].noUiSlider.setHandle(null, currVal)
 		}, 10)
 	});
 
 	$('.curexc-value-to').on('change', function() {
-		let thisVal = parseFloat($(this).val());
-		$('.curexc-value-from + .range-slider__element-wrapper .range-slider__amount').val((thisVal / currCoef).toFixed(0))
+		let thisVal = (parseFloat($(this).val()) / currCoef).toFixed(0);
+		$('.curexc-value-from + .range-slider__element-wrapper .range-slider__amount').val(thisVal)
+		$('.curexc-value-from').val(thisVal);
 	});
 
 	$('.curexc-next').on('click', function(e) {

@@ -1,0 +1,72 @@
+$root-size: 9px;
+
+@function rem($size) {
+  @return $size / $root-size * 1rem;
+}
+
+.curexc-banner {
+	display: flex;
+	align-items: center;
+	border-radius: rem(10px);
+	background: linear-gradient(260.19deg, #F8F8F8 22.2%, #F2F6F9 66.23%);
+	padding: rem(30px) rem(63px);
+	margin-top: rem(30px);
+}
+
+.curexc-banner-left {
+	flex-grow: 1;
+	margin-right: rem(30px);
+}
+
+.curexc-banner-left .h3 {
+	font-size: rem(22px);
+	font-weight: 500;
+	color: #000;
+	line-height: 1.2;
+	max-width: rem(432px);
+}
+
+.default-btn {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	white-space: nowrap;
+	outline: none !important;
+	border: none;
+	text-decoration: none !important;
+	font-weight: 600;
+	color: #fff !important;
+	text-transform: uppercase;
+	height: rem(64px);
+	line-height: rem(64px);
+	background-color: #94C22B;
+	border-radius: rem(10px);
+	padding: 0 rem(30px);
+	transition: all .3s ease;
+}
+
+.default-btn:hover {
+	background-color: #7dad0d;
+}
+
+@media (max-width: 767.98px) {
+	.curexc-banner {
+		padding: 20px;
+		display: block;
+	}
+	.curexc-banner-left {
+		margin: 0 0 20px;
+	}
+	.curexc-banner .h3 {
+		font-size: 18px;
+		line-height: 1.35;
+	}
+	.default-btn {
+		width: 100%;
+		text-align: center;
+		height: 45px;
+		line-height: 45px;
+		font-size: 12px;
+		padding: 0 10px;
+	}
+}

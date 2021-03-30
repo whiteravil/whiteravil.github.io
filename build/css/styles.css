@@ -22993,11 +22993,12 @@ textarea.application__form-input {
     background-color: transparent;
     padding: 0;
     margin: 0 3.77778rem 0 0;
-    color: #aaa;
+    color: #aaa !important;
     font-size: 3.33333rem;
-    font-weight: 500; }
-    .curexc-info-nav .tabs-nav__link.active {
-      color: #000; }
+    font-weight: 500;
+    background: none !important; }
+    .curexc-info-nav .tabs-nav__link.active, .curexc-info-nav .tabs-nav__link:hover {
+      color: #000 !important; }
 
 .curexc-info-tabs-tabs .new-about-bank-products__accordion-btn {
   font-weight: 500; }
@@ -23010,7 +23011,7 @@ textarea.application__form-input {
   padding-left: 2.88889rem; }
 
 .default-full-select .choices[data-type*=select-one]:after {
-  right: 2.22222rem; }
+  right: 2.22222rem !important; }
 
 .select-location-group {
   position: relative; }
@@ -23916,3 +23917,67 @@ textarea.application__form-input {
           .currency__card-rates-table-wrapper tbody tr td .rate svg {
             width: 11px;
             height: 11px; } }
+
+.curexc-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 1.11111rem;
+  background: linear-gradient(260.19deg, #F8F8F8 22.2%, #F2F6F9 66.23%);
+  padding: 3.33333rem 7rem;
+  margin-top: 3.33333rem; }
+
+.curexc-banner-left {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-right: 3.33333rem; }
+
+.curexc-banner-left .h3 {
+  font-size: 2.44444rem;
+  font-weight: 500;
+  color: #000;
+  line-height: 1.2;
+  max-width: 48rem; }
+
+.default-btn {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  white-space: nowrap;
+  outline: none !important;
+  border: none;
+  text-decoration: none !important;
+  font-weight: 600;
+  color: #fff !important;
+  text-transform: uppercase;
+  height: 7.11111rem;
+  line-height: 7.11111rem;
+  background-color: #94C22B;
+  border-radius: 1.11111rem;
+  padding: 0 3.33333rem;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease; }
+
+.default-btn:hover {
+  background-color: #7dad0d; }
+
+@media (max-width: 767.98px) {
+  .curexc-banner {
+    padding: 20px;
+    display: block; }
+  .curexc-banner-left {
+    margin: 0 0 20px; }
+  .curexc-banner .h3 {
+    font-size: 18px;
+    line-height: 1.35; }
+  .default-btn {
+    width: 100%;
+    text-align: center;
+    height: 45px;
+    line-height: 45px;
+    font-size: 12px;
+    padding: 0 10px; } }
