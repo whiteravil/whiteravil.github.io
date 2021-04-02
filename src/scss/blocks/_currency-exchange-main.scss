@@ -1045,6 +1045,23 @@ $root-size: 9px;
 	}
 }
 
+.curexc-converter {
+	.range-slider__element-wrapper {
+		background-color: #F5F5F5;
+	}
+	.choices.is-disabled .choices__inner, .choices.is-disabled .choices__input {
+		background-color: #F5F5F5;
+	}
+	.choices.is-disabled:after {
+		display: none !important;
+	}
+	.choices.is-disabled .choices__inner, .choices.is-disabled .choices__input, .choices.is-disabled .choices__item {
+		cursor: default !important;
+	}
+}
+
+
+
 @keyframes progress {
 	0% {
 		transform: scaleX(0);

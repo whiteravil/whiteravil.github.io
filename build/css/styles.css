@@ -23638,6 +23638,18 @@ textarea.application__form-input {
     -webkit-transform: scaleX(0);
             transform: scaleX(0); }
 
+.curexc-converter .range-slider__element-wrapper {
+  background-color: #F5F5F5; }
+
+.curexc-converter .choices.is-disabled .choices__inner, .curexc-converter .choices.is-disabled .choices__input {
+  background-color: #F5F5F5; }
+
+.curexc-converter .choices.is-disabled:after {
+  display: none !important; }
+
+.curexc-converter .choices.is-disabled .choices__inner, .curexc-converter .choices.is-disabled .choices__input, .curexc-converter .choices.is-disabled .choices__item {
+  cursor: default !important; }
+
 @-webkit-keyframes progress {
   0% {
     -webkit-transform: scaleX(0);
