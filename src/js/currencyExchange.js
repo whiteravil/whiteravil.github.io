@@ -340,13 +340,20 @@ export default function() {
 		e.preventDefault();
 		let act = $('.application__form-steps-layer.active'),
 				step = parseInt(act.data('step'));
-		nextStep(step + 1);
 		$('.curexc-next').prop('disabled', true);
 		// Чисто для теста
 		$('.form-loader').addClass('opened');
 		setTimeout(() => {
 			$('.form-loader').removeClass('opened');
 		}, 3000)
+		let valFrom = parseInt($('.curexc-value-from').val());
+		if ( valFrom % 50 == 0 ) {
+			$('.curexc-value-from').parents('.currency__card-calculate-widget-range-wrapper').removeClass('danger')
+			nextStep(step + 1);
+		}
+		else {
+			$('.curexc-value-from').parents('.currency__card-calculate-widget-range-wrapper').addClass('danger');
+		}
 	});
 
 	$('.curexc-prev').on('click', function(e) {
@@ -457,6 +464,13 @@ export default function() {
 	//Правки
 	$('#curexc-phone-input').on('complete', function() {
 		openModal('#application-code-2');
+	});
+
+	$('#curexc-phone-input').on('input', function() {
+		let val = $(this).val();
+		if ( val.split('_').join('').length < 18 ) {
+			console.log(val)
+		}
 	});
 
 	let phoneFormCodeInputs = $('#curexc-phone-form .modal__application-code-form-input');

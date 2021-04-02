@@ -23650,6 +23650,14 @@ textarea.application__form-input {
 .curexc-converter .choices.is-disabled .choices__inner, .curexc-converter .choices.is-disabled .choices__input, .curexc-converter .choices.is-disabled .choices__item {
   cursor: default !important; }
 
+.range-danger-text {
+  font-size: 12px;
+  color: red;
+  margin-top: 15px;
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+  display: none; }
+
 @-webkit-keyframes progress {
   0% {
     -webkit-transform: scaleX(0);
@@ -23671,6 +23679,21 @@ textarea.application__form-input {
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1); } }
+
+.currency__card-calculate-widget-range-wrapper.danger .range-slider .noUi-target {
+  background-color: #ffdcdc !important; }
+
+.currency__card-calculate-widget-range-wrapper.danger .range-slider__element-wrapper {
+  background-color: #ffdcdc !important; }
+
+.currency__card-calculate-widget-range-wrapper.danger .range-slider .noUi-connect {
+  background-color: #f6c1c1 !important; }
+
+.currency__card-calculate-widget-range-wrapper.danger .range-slider__amount {
+  color: red !important; }
+
+.currency__card-calculate-widget-range-wrapper.danger .range-slider .noUi-horizontal .noUi-handle::after {
+  border-color: red !important; }
 
 @media (max-width: 1199.98px) {
   .curexc-table table tr td:last-child {
@@ -24067,6 +24090,63 @@ textarea.application__form-input {
         -ms-flex-align: start;
             align-items: flex-start;
     padding-top: 100px; } }
+
+.modal__application-code-form-btn-submit {
+  position: relative;
+  overflow: hidden; }
+  .modal__application-code-form-btn-submit.load:after, .modal__application-code-form-btn-submit.load:before {
+    opacity: 1;
+    visibility: visible; }
+  .modal__application-code-form-btn-submit:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(148, 194, 43, 0.75);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease; }
+  .modal__application-code-form-btn-submit:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 100%;
+    height: 100%;
+    width: 21px;
+    height: 21px;
+    background-image: url(../img/reload.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+    -webkit-animation: rotateLoader .5s linear infinite;
+            animation: rotateLoader .5s linear infinite;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease; }
+
+@-webkit-keyframes rotateLoader {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes rotateLoader {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0); }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 .curexc-banner {
   display: -webkit-box;
