@@ -342,6 +342,11 @@ export default function() {
 				step = parseInt(act.data('step'));
 		nextStep(step + 1);
 		$('.curexc-next').prop('disabled', true);
+		// Чисто для теста
+		$('.form-loader').addClass('opened');
+		setTimeout(() => {
+			$('.form-loader').removeClass('opened');
+		}, 3000)
 	});
 
 	$('.curexc-prev').on('click', function(e) {
