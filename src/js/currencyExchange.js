@@ -353,6 +353,7 @@ export default function() {
 		}
 		else {
 			$('.curexc-value-from').parents('.currency__card-calculate-widget-range-wrapper').addClass('danger');
+			$('.curexc-value-from').parents('.currency__card-calculate-widget-range-wrapper').find('.range-slider__amount').focus()
 		}
 	});
 
